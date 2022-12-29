@@ -1,0 +1,13 @@
+<div class="home-root" [ngClass]="{ 'small-root':screenIsMobile, 'large-root':!screenIsMobile }">
+    <div class="title-container">
+        <div class="title">
+            The GME Hydra welcomes you
+        </div>
+    </div>
+    <div class="body">
+        gmehydra.org is a directory service that provides a list of <a href="https://en.wikipedia.org/wiki/Fediverse" target="_blank">fediverse</a> servers operated by DRS'd shareholders of GME
+    </div>
+    <div class="body">
+        The GME Hydra currently has <span class="head-count">{{ headCount }}</span> heads.
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.popup-root{
+    min-width: 300px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.message{
+    color: rgb(66, 66, 66);
+    margin-bottom: 10px;
+}
+
+.email{
+    font-weight: bold;
+    font-size: 1.5em;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}

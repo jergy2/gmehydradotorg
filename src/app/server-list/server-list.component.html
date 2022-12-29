@@ -1,0 +1,68 @@
+<div class="server-list-root" [ngClass]="{ 'small-root':screenIsMobile, 'large-root':!screenIsMobile }">
+    <div class="server-list" [ngClass]="{ 'small-list':screenIsMobile, 'large-list':!screenIsMobile }">
+        <div class="title">
+            Server list
+        </div>
+        <div class="table-container">
+            <table class="table table-small" *ngIf="screenIsMobile">
+                <tr>
+                    <td>URL</td>
+                    <td>Users</td>
+                    <td></td>
+                </tr>
+                <tr *ngFor="let server of serverList">
+                    <td>
+                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank"> {{ server.displayUrl }}</a>
+                    </td>
+                    <td> {{ userCount(server.userCount) }} </td>
+                    <td class="center-horizontal">
+                        <div class="green-status"></div>
+                    </td>
+                </tr>
+            </table>
+            <table class="table table-big" *ngIf="!screenIsMobile">
+                <tr>
+                    <td>
+                        URL
+                    </td>
+                    <td>
+                        User count
+                    </td>
+                    <td>Registration</td>
+                    <td>
+                        Server Status
+                    </td>
+                    <!-- <td>
+                    DRS Ownership
+                </td> -->
+                </tr>
+                <tr>
+                </tr>
+                <tr *ngFor="let server of serverList">
+                    <td>
+                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank">  {{ server.displayUrl }}</a>
+                    </td>
+                    <td> {{ userCount(server.userCount) }} </td>
+
+                    <td>
+                        <div *ngIf="server.registrationStatus === 'BY_INVITE'">
+                            <a class="server-link" [attr.href]="server.registrationLink" target="_blank"> By invite</a>
+                        </div>
+                        <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
+                            {{ registrationStatus(server) }}
+                        </div>
+                        
+                    </td>
+                    <td class="center-horizontal">
+                        <div class="green-status"></div>
+                    </td>
+                    <!-- <td> {{ server.drsStatus }} </td> -->
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to this list</button>
+        </div>
+    </div>
+    
+</div>

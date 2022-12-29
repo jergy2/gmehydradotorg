@@ -11,16 +11,6 @@
   --bttm-left-blur-2: #e46b73;
 }
 
-html {
-    background: var(--color-bg);
-    font-family: var(--main-family);
-    min-height: 100%;
-}
-
-body{
-  margin: 0;
-}
-
 #background {
     position: fixed;
     width: 100%;

@@ -1,12 +1,7 @@
 <div class="app-component-root">
-  <div class="title-container">
-    <div class="title">
-      <div>
-        2022-12-28
-      </div>
-      The hydra is born
-    </div>
-  </div> 
-
-
+  <app-home class="home-container"></app-home>
+  <app-server-list class="server-list-container"></app-server-list>
+</div>
+<div class="popup" *ngIf="showPopup">
+  <app-add-server-popup></app-add-server-popup>
 </div>
