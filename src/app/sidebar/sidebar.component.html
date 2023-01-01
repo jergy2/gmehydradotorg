@@ -1,0 +1,7 @@
+<div class="sidebar-root">
+    <div class="sidebar">
+        <div *ngFor="let sidebarItem of sidebarItems" class="sidebar-item" [routerLink]="sidebarItem.path" (click)="onClickItem(sidebarItem.path)">
+            {{sidebarItem.title}}
+        </div>
+    </div>
+</div>

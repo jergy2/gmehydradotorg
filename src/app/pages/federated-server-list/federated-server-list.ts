@@ -1,6 +1,7 @@
-import { Server } from "./server.interface";
+import { FederatedServer } from "./federated-server.interface";
 
-export const serverList: Server[] = [
+
+export const federatedServerList: FederatedServer[] = [
     {
         name: 'superstork',
         displayUrl: 'www.superstork.org',

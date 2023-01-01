@@ -1,6 +1,14 @@
 <div class="app-component-root">
-  <app-home class="home-container"></app-home>
-  <app-server-list class="server-list-container"></app-server-list>
+  <div class="component-container">
+    <router-outlet></router-outlet>
+  </div>
+  
+  <!-- <app-home class="component-container"></app-home> -->
+  <!-- <app-federated-server-list class="component-container"></app-federated-server-list> -->
+  <!-- <app-about class="component-container"></app-about> -->
+</div>
+<div class="sidebar" *ngIf="isLarge">
+  <app-sidebar></app-sidebar>
 </div>
 <div class="popup" *ngIf="showPopup">
   <app-add-server-popup></app-add-server-popup>

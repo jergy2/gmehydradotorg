@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { Server } from './server.interface';
-import { serverList } from './server-list';
-import { ScreenSizeService } from '../screen-size/screen-size.service';
-import { PopupService } from '../popup.service';
+import { ScreenSizeService } from 'src/app/screen-size/screen-size.service';
+import { PopupService } from 'src/app/utilities/popup.service';
+import { federatedServerList } from './federated-server-list';
+import { FederatedServer } from './federated-server.interface';
+
 
 @Component({
-  selector: 'app-server-list',
-  templateUrl: './server-list.component.html',
-  styleUrls: ['./server-list.component.css']
+  selector: 'app-federated-server-list',
+  templateUrl: './federated-server-list.component.html',
+  styleUrls: ['./federated-server-list.component.css']
 })
-export class ServerListComponent implements OnInit {
+export class FederatedServerListComponent implements OnInit {
 
   constructor(private screenService: ScreenSizeService, private popupService: PopupService) { }
 
   private _isMobile: boolean = false;
 
-  public get serverList(): Server[] { return serverList; }
+  public get serverList(): FederatedServer[] { return federatedServerList; }
   public get screenIsMobile(): boolean { return this._isMobile; }
 
 
@@ -40,7 +41,7 @@ export class ServerListComponent implements OnInit {
     }
   }
 
-  public registrationStatus(server: Server): string{ 
+  public registrationStatus(server: FederatedServer): string{ 
     if(server.registrationStatus === 'OPEN'){
       return 'Open';
     }else if(server.registrationStatus === 'BY_INVITE'){

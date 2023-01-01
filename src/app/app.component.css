@@ -8,17 +8,13 @@
   justify-content: flex-start;
   overflow-y: auto;
 }
-.server-list-container{
+
+.component-container{
   display:flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-}
-.home-container{
-  display:flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
+  margin-bottom: 20px;
 }
 .popup{
   position: absolute;
@@ -29,4 +25,9 @@
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.212)
+}
+.sidebar{
+  position: absolute;
+  width: 200px;
+  min-height: 100%;
 }

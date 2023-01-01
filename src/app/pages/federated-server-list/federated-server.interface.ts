@@ -1,4 +1,4 @@
-export interface Server{
+export interface FederatedServer{
     name: string;
     displayUrl: string;
     fullUrl: string; 

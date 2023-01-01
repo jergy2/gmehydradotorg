@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScreenSizeService } from '../screen-size/screen-size.service';
+import { ScreenSizeService } from '../../screen-size/screen-size.service';
 
 @Component({
   selector: 'app-home',
