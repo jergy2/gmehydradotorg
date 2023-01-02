@@ -1,0 +1,5 @@
+export enum AuthorityMechanism{
+    CENTRALIZED = 'CENTRALIZED',
+    FEDERATED = 'FEDERATED',
+    DECENTRALIZED = 'DECENTRALIZED',
+}

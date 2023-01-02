@@ -1,7 +1,24 @@
+
 <div class="app-component-root">
-  <app-home class="home-container"></app-home>
-  <app-server-list class="server-list-container"></app-server-list>
+  <div class="component-container">
+    <div class="router-outlet">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </div>
+  
+  <!-- <app-home class="component-container"></app-home> -->
+  <!-- <app-federated-server-list class="component-container"></app-federated-server-list> -->
+  <!-- <app-about class="component-container"></app-about> -->
 </div>
+<div class="sidebar-container" *ngIf="isLarge">
+  <app-sidebar class="sidebar"></app-sidebar>
+</div>
+
 <div class="popup" *ngIf="showPopup">
   <app-add-server-popup></app-add-server-popup>
+</div>
+
+<div class="footer-container">
+  <app-footer style="height:100%;"></app-footer>
 </div>

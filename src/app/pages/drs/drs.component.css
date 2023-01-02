@@ -1,0 +1,55 @@
+.drs-root{
+    max-width: 600px;
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title{
+    margin: 20px;
+    font-size: 1.8em;
+    font-weight: 500;
+}
+
+
+.link{
+    color: var(--color-special);
+}
+.link:hover{
+    cursor: pointer;
+    font-weight: 500;
+}
+.lyrics-container{
+    max-height: 200px;
+    overflow-y: auto;
+    font-size: 0.8em;
+    margin: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(246, 246, 246);
+}
+
+.table-container{
+    margin-top:10px;
+    display:flex;
+    width:100%;
+    flex-direction: column;
+}
+
+.drs-comparison-table{
+    width: 100%;
+}
+.drs-comparison-table > tr{
+    width: 100%;
+}
+.drs-comparison-table{
+    border-collapse: collapse;
+}
+.tr-center{
+    text-align: center;
+}
+td{
+    padding: 5px;
+    border: 1px solid rgb(235, 235, 235);
+}

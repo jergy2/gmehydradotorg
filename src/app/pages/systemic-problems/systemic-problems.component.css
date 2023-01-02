@@ -1,0 +1,7 @@
+.link{
+    color: var(--color-special);
+}
+.link:hover{
+    cursor: pointer;
+    font-weight: 500;
+}

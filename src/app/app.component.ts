@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { PopupService } from './popup.service';
-import { ScreenSizeService } from './screen-size/screen-size.service';
+import { PopupService } from './utilities/popup.service';
+import { ScreenSizeService } from './utilities/screen-size/screen-size.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,13 @@ import { ScreenSizeService } from './screen-size/screen-size.service';
 })
 export class AppComponent implements OnInit {
   title = 'GME Hydra';
-  constructor(private screenService: ScreenSizeService, private popupService: PopupService){}
+  constructor(
+    private screenService: ScreenSizeService, 
+    private popupService: PopupService,
+    private router: Router
+    ){}
+
+  public get isLarge(): boolean { return this.screenService.isFullSize; }
 
   @HostListener('window:resize', ['$event']) onResize(e: Event) {
     this.screenService.updateSize(window.innerWidth, window.innerHeight);
@@ -19,5 +26,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.screenService.updateSize(window.innerWidth, window.innerHeight);
+    this.router.navigate(['/servers']);
   }
 }
