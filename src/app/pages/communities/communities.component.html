@@ -1,8 +1,23 @@
-<div>
-    <div *ngFor="let community of communitiesList" class="community-entry">
-
-        {{community.name}} on {{ community.platform}}
+<div class="generic-container shadow">
+    <div class="generic-title">
+        Communities for legitimate investors of GameStop
     </div>
-        
-
+    <div class="communities-list">
+        <div *ngFor="let community of communitiesList" class="community-entry">
+            <div style="display:flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                <div>
+                    {{community.name}}
+                </div>
+                <div style="display:flex;flex-direction:row; align-items: center;">
+                    {{ community.platform}}
+                    <img [src]="community.iconPath" style="height: 25px; width: 25px; border-radius: 25px; margin-left: 15px;">
+                </div>
+            </div>
+            <div>
+                <a target="_blank" [href]="community.url">{{ community.url }}</a>
+            </div>
+        </div>
+            
+    
+    </div>
 </div>

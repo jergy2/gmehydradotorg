@@ -14,7 +14,7 @@ import { DrsComponent } from './pages/drs/drs.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { FediverseComponent } from './pages/fediverse/fediverse.component';
 import { FooterComponent } from './nav/footer/footer.component';
-import { HowToComponent } from './pages/how-to/how-to.component';
+import { RunYourOwnComponent } from './pages/run-your-own/run-your-own.component';
 import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component';
 import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
 
@@ -32,7 +32,7 @@ import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-pr
     TimelineComponent,
     FediverseComponent,
     FooterComponent,
-    HowToComponent,
+    RunYourOwnComponent,
     DrsLyricsComponent,
     SystemicProblemsComponent
   ],

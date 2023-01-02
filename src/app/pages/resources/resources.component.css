@@ -1,0 +1,28 @@
+.resource-list{
+    display:flex;
+    flex-direction: column;
+}
+
+.resource-item{
+    background-color: rgb(241, 241, 241);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+
+    display:flex;
+    flex-direction: column;
+
+    text-align: left;
+    
+}
+.resource-title{
+    font-weight: 500;
+}
+.resource-link{
+    color: gray;
+    font-size: 0.8em;
+}
+.resource-description{
+    color: gray;
+    font-size: 0.8em;
+}

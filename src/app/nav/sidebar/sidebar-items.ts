@@ -3,7 +3,7 @@ import { SidebarItem } from "./sidebar-item.interface";
 export const sidebarItems: SidebarItem[] = [
 
     {
-        title: 'Federated Server List',
+        title: 'Fediverse Server List',
         path: '/servers'
     },
     {
@@ -14,24 +14,24 @@ export const sidebarItems: SidebarItem[] = [
         title: 'Run Your Own Fediverse Server',
         path: '/run-your-own'
     },
-    {
-        title: 'Systemic Problems',
-        path: '/systemic-problems'
-    },
+    // {
+    //     title: 'Systemic Problems',
+    //     path: '/systemic-problems'
+    // },
     {
         title: 'Direct Registration System (DRS)',
         path: '/direct-registration-system'
     },
-    {
-        title: 'Timeline',
-        path: '/timeline'
-    },
+    // {
+    //     title: 'Timeline',
+    //     path: '/timeline'
+    // },
     {
         title: 'GME Communities',
         path: '/communities'
     },
     {
-        title: 'GME Resources',
+        title: 'Resources',
         path: '/resources'
     },
 

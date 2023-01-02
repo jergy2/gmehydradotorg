@@ -6,4 +6,5 @@ export interface CommunityEntry{
     name: string;
     url: string;
     description: string;   
+    iconPath: string;
 }

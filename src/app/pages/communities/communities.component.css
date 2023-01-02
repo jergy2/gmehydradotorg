@@ -1,9 +1,15 @@
+.communities-list{
+    display:flex;
+    flex-direction: column;
+}
 .community-entry{
-    background-color: white;
+    background-color: rgb(241, 241, 241);
     padding: 15px;
     border-radius: 10px;
     margin: 10px;
 
     display:flex;
     flex-direction: column;
+
+    
 }
