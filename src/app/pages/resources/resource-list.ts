@@ -9,7 +9,7 @@ export const resourceList: ResourceItem[] = [
     },
     {
         title: 'DRSGME.org',
-        fullUrl: 'https://www.www.drsgme.org',
+        fullUrl: 'https://www.drsgme.org',
         displayUrl: 'www.drsgme.org',
         description: 'Information website produced by GameStop investors to provide information about the very import Direct Registration System',
     },
