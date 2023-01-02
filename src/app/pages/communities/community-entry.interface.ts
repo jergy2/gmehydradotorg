@@ -4,7 +4,8 @@ export interface CommunityEntry{
     structure: AuthorityMechanism;
     platform: string;
     name: string;
-    url: string;
+    displayUrl: string;
+    fullUrl: string;
     description: string;   
     iconPath: string;
 }
