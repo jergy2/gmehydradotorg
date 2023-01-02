@@ -12,15 +12,19 @@ export const sidebarItems: SidebarItem[] = [
     },
     {
         title: 'Run Your Own Fediverse Server',
-        path: '/how-to'
+        path: '/run-your-own'
+    },
+    {
+        title: 'Systemic Problems',
+        path: '/systemic-problems'
+    },
+    {
+        title: 'Direct Registration System (DRS)',
+        path: '/direct-registration-system'
     },
     {
         title: 'Timeline',
         path: '/timeline'
-    },
-    {
-        title: 'Direct Registration System (DRS)',
-        path: '/drs'
     },
     {
         title: 'GME Communities',

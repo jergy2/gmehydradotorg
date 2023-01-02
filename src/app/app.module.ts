@@ -16,6 +16,7 @@ import { FediverseComponent } from './pages/fediverse/fediverse.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { HowToComponent } from './pages/how-to/how-to.component';
 import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component';
+import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component'
     FediverseComponent,
     FooterComponent,
     HowToComponent,
-    DrsLyricsComponent
+    DrsLyricsComponent,
+    SystemicProblemsComponent
   ],
   imports: [
     BrowserModule,
