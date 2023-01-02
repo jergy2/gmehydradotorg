@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ScreenSizeService } from 'src/app/screen-size/screen-size.service';
+import { ScreenSizeService } from 'src/app/utilities/screen-size/screen-size.service';
 import { PopupService } from 'src/app/utilities/popup.service';
 import { federatedServerList } from './federated-server-list';
 import { FederatedServer } from './federated-server.interface';

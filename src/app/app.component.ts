@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { PopupService } from './utilities/popup.service';
-import { ScreenSizeService } from './screen-size/screen-size.service';
+import { ScreenSizeService } from './utilities/screen-size/screen-size.service';
 import { Router } from '@angular/router';
 
 @Component({

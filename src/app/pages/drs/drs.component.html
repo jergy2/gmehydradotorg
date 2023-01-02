@@ -1,1 +1,58 @@
-www.drsgme.org
+<div class="drs-root">
+    <div class="title">Direct Registration System (DRS)</div>
+    <div class="container shadow" style="display:flex; flex-direction: column; align-items: center;">
+        The Direct Registration System aka DRS is a fundamental part of everything that is happening right now.
+
+        <iframe style="width:600px;height:337px;border-radius: 10px;background-color:white;margin-top:10px;" src="https://www.youtube.com/embed/gNTClU6lLqY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="controls-row">
+            <div class="source-button">
+                Source: 
+                
+                <a href="https://www.drsgme.org" target="_blank" class="source-link">
+                    DRSGME.org
+                    <img src="assets/drsgme-icon.png" alt="reddit" style="width:25px;height:25px;margin-left: 10px;">
+                </a>
+            </div>
+        </div>   
+    </div>
+    <div class="container shadow">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/44pfWLrktQTf2cFSn7Gmng?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+        <div class="lyrics-container" *ngIf="showLyrics">
+            <app-drs-lyrics ></app-drs-lyrics>
+        </div>
+        <div class="controls-row">
+            <div class="source-button">
+                Source: 
+                
+                <a href="https://www.reddit.com/r/Superstonk/comments/zjiaob/the_mission_is_clear_drs_wooch_here_back_with/" target="_blank" class="source-link">
+                    WoochTAK on Reddit
+                    <img src="assets/reddit-icon.png" alt="reddit" style="width:25px;height:25px;margin-left: 10px;">
+                </a>
+            </div>
+            <button class="bttn bttn.primary button" (click)="onClickShowLyrics()">
+                <div *ngIf="showLyrics">
+                    Hide lyrics
+                </div>
+                <div *ngIf="!showLyrics">
+                    Show lyrics
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="container shadow">
+        <a target="_blank" href="https://twitter.com/SusanneTrimbath/status/1603566733339422720?cxt=HHwWgMCjpdXcgcEsAAAA">
+            <img src="assets/escalate-your-commitment.png" alt="Susanne Trimbath on Twitter">
+        </a>     
+        <div class="controls-row">
+            <div class="source-button">
+                Source: 
+                
+                <a href="https://twitter.com/SusanneTrimbath/status/1603566733339422720?cxt=HHwWgMCjpdXcgcEsAAAA" target="_blank" class="source-link">
+                    Susanne Trimbath on Twitter
+                    <img src="assets/twitter-icon.png" alt="reddit" style="width:25px;height:25px;margin-left: 10px;">
+                </a>
+            </div>
+        </div>   
+    </div>
+</div>

@@ -4,6 +4,8 @@
   --main-family: 'Poppins', sans-serif;
   --color-bg: linear-gradient(180deg, #FFFFFF 0%, #AEC6DC 100%);
 
+  --color-special: rgb(147 23 107 / 100%);
+
   /* Controls the blob blur gradient colors within the main tag's svg */
   --top-right-blur-1: #20C6B7;
   --top-right-blur-2: #4D9ABF;
@@ -12,10 +14,10 @@
 }
 
 #background {
-    position: fixed;
-    width: 100%;
-    z-index: -1;
-    height: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: -1;
+  height: 100%;
 }
 
 #content {
@@ -25,12 +27,12 @@
   margin: 0 auto;
 }
 
-.header{
-    text-align: center;
+.header {
+  text-align: center;
 }
 
 .header h1 {
-  padding-top:5%;
+  padding-top: 5%;
   margin: 0;
   font-size: calc(max(5vw, 32px));
 }
@@ -55,19 +57,18 @@
   }
 }
 
-.bttns{
+.bttns {
   margin-bottom: 5%;
 }
 
-.bttn{
+.bttn {
   padding: 15px;
   border-radius: 5px;
   width: 150px;
-  margin: 0 1%;
   text-decoration: none;
 }
 
-.bttn.primary{
+.bttn.primary {
   display: inline-block;
   width: max-content;
   background: #21A69A;
@@ -82,7 +83,7 @@
   /* -webkit-box-shadow: inset 3px 4px 10px rgb(35 33 33 / 40%); */
 }
 
-.bttn.secondary{
+.bttn.secondary {
   background: transparent;
   border: #093C4F 2px solid;
   color: #0D1D24;

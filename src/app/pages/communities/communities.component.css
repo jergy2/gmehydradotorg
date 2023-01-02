@@ -1,0 +1,9 @@
+.community-entry{
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+
+    display:flex;
+    flex-direction: column;
+}

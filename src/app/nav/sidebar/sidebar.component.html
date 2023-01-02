@@ -1,0 +1,11 @@
+<div class="sidebar-root">
+    <div class="sidebar shadow">
+        <div *ngFor="let sidebarItem of sidebarItems" 
+        class="sidebar-item" 
+        [routerLink]="sidebarItem.path" 
+        [routerLinkActive]="'active-link'"
+        (click)="onClickItem(sidebarItem.path)">
+            {{sidebarItem.title}}
+        </div>
+    </div>
+</div>

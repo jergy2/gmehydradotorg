@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { communitiesList } from './communities-list';
+import { CommunityEntry } from './community-entry.interface';
 
 @Component({
   selector: 'app-communities',
@@ -8,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class CommunitiesComponent implements OnInit {
 
   constructor() { }
+
+  public get communitiesList(): CommunityEntry[] { return communitiesList; }
 
   ngOnInit(): void {
   }
