@@ -26,6 +26,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.screenService.updateSize(window.innerWidth, window.innerHeight);
-    this.router.navigate(['/servers']);
+    // this.router.navigate(['/servers']);
   }
 }

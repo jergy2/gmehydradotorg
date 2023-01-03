@@ -2,9 +2,9 @@
 <div class="app-component-root">
   <div class="component-container">
     <div class="router-outlet">
-      <div *ngIf="!isLarge" style="height: 41px;"></div>
+      <div *ngIf="!isLarge" style="min-height: 41px; width: 100%;"></div>
       <router-outlet></router-outlet>
-      <div style="height:41px;"></div>
+      <div *ngIf="!isLarge" style="height:41px;"></div>
     </div>
   </div>
 </div>
@@ -21,6 +21,6 @@
   <app-add-server-popup></app-add-server-popup>
 </div>
 
-<div class="footer-container">
+<div class="footer-container" *ngIf="isLarge">
   <app-footer style="height:100%;"></app-footer>
 </div>

@@ -1,16 +1,18 @@
 <div class="generic-container">
-    <div class="generic-title">Information Resources</div>
-    <div class="resource-list">
-        <div *ngFor="let resource of resourceList" class="resource-item">
-            <div class="resource-title">
-                {{ resource.title}}
-            </div>
-            <div class="resource-link">
-                <a [href]="resource.fullUrl" target="_blank"> {{ resource.displayUrl }}</a>
-               
-            </div>
-            <div class="resource-description">
-                {{ resource.description}}
+    <div class="generic-inner-container">
+        <div class="generic-title">Information Resources</div>
+        <div class="resource-list">
+            <div *ngFor="let resource of resourceList" class="resource-item">
+                <div class="resource-title">
+                    {{ resource.title}}
+                </div>
+                <div class="resource-link">
+                    <a [href]="resource.fullUrl" target="_blank"> {{ resource.displayUrl }}</a>
+                   
+                </div>
+                <div class="resource-description">
+                    {{ resource.description}}
+                </div>
             </div>
         </div>
     </div>
