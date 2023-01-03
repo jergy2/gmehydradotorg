@@ -33,6 +33,12 @@ export class HeaderMenuComponent implements OnInit {
     if(foundIndex >= 0){
       return sidebarItems[foundIndex].title;
     }
+    if(url === '/'){
+      const foundIndex = sidebarItems.findIndex(item => item.path === '/servers');
+      if(foundIndex >= 0){
+        return sidebarItems[foundIndex].title;
+      }
+    }
     return '';
   }
   public get title(): string{ return this._title; }
