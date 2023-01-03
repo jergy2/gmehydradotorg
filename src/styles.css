@@ -68,3 +68,18 @@ body{
 .source-link:hover{
   background-color:rgb(240, 240, 240);
 }
+
+.fa-icon-container{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 25px;
+  width: 25px; 
+  color: gray;
+}
+
+.fa-icon-container:hover{
+  cursor: pointer;
+  color: var(--color-special);
+}

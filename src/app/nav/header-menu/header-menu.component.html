@@ -1,0 +1,17 @@
+<div class="header-menu-root" (click)="onClickHeader()">
+    <div class="fa-icon-container">
+        <fa-icon [icon]="faBars"></fa-icon>
+    </div>
+    <div class="title">
+        {{ title }}
+    </div>
+</div>
+<div *ngIf="isExpanded" class="item-list">
+    <div *ngFor="let sidebarItem of sidebarItems" 
+        class="menu-item"
+        [routerLink]="sidebarItem.path" 
+        [routerLinkActive]="'active-link'"
+        (click)="onClickItem(sidebarItem.path)">
+            {{sidebarItem.title}}
+        </div>
+</div>

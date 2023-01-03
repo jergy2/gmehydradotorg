@@ -2,15 +2,17 @@
 <div class="app-component-root">
   <div class="component-container">
     <div class="router-outlet">
+      <div *ngIf="!isLarge" style="height: 41px;"></div>
       <router-outlet></router-outlet>
+      <div style="height:41px;"></div>
     </div>
-    
   </div>
-  
-  <!-- <app-home class="component-container"></app-home> -->
-  <!-- <app-federated-server-list class="component-container"></app-federated-server-list> -->
-  <!-- <app-about class="component-container"></app-about> -->
 </div>
+
+<div class="header-menu-container" *ngIf="!isLarge">
+  <app-header-menu style="height:100%;width:100%;"></app-header-menu>
+</div>
+
 <div class="sidebar-container" *ngIf="isLarge">
   <app-sidebar class="sidebar"></app-sidebar>
 </div>
