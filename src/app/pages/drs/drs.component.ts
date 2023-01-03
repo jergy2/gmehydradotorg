@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ScreenSizeService } from 'src/app/utilities/screen-size/screen-size.service';
 
 @Component({
   selector: 'app-drs',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DrsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sizeService: ScreenSizeService) { }
 
   private _showLyrics: boolean = false;
   public get showLyrics(): boolean { return this._showLyrics; }
+  public get isLarge(): boolean { return this.sizeService.isFullSize; }
 
   ngOnInit(): void {
   }

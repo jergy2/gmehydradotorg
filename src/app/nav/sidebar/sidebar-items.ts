@@ -4,7 +4,7 @@ export const sidebarItems: SidebarItem[] = [
 
     {
         title: 'Fediverse Server List',
-        path: '/servers'
+        path: '/server-list'
     },
     {
         title: 'Why Fediverse?',

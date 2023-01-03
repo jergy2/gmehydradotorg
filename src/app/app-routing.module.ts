@@ -13,7 +13,7 @@ import { TimelineComponent } from './pages/timeline/timeline.component';
 const routes: Routes = [
 
   { path: '*', component: FederatedServerListComponent },
-  { path: 'servers', component: FederatedServerListComponent },
+  { path: 'server-list', component: FederatedServerListComponent },
   { path: 'about', component: AboutComponent },
   { path: 'run-your-own', component: RunYourOwnComponent },
   { path: 'resources', component: ResourcesComponent },

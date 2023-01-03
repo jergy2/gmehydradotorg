@@ -3,8 +3,9 @@
   <div class="component-container">
     <div class="router-outlet">
       <div *ngIf="!isLarge" style="min-height: 41px; width: 100%;"></div>
+      <div *ngIf="isLarge" style="min-height: 10px; width: 100%;"></div>
       <router-outlet></router-outlet>
-      <div *ngIf="!isLarge" style="height:41px;"></div>
+      <div *ngIf="isLarge" style="min-height:41px;display:flex;"></div>
     </div>
   </div>
 </div>
