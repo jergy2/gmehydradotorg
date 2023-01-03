@@ -35,6 +35,6 @@ export const resourceList: ResourceItem[] = [
         title: 'Ape Historian website',
         fullUrl: 'https://www.apehistorian.com',
         displayUrl: 'www.apehistorian.com',
-        description: 'Information website produced by GameStop investors to provide information about the very import Direct Registration System',
+        description: 'Information website produced by GameStop investors to store and archive information from this saga',
     },
 ];
