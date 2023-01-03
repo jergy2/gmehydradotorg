@@ -17,6 +17,8 @@ import { FooterComponent } from './nav/footer/footer.component';
 import { RunYourOwnComponent } from './pages/run-your-own/run-your-own.component';
 import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component';
 import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
+import { HeaderMenuComponent } from './nav/header-menu/header-menu.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,13 @@ import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-pr
     FooterComponent,
     RunYourOwnComponent,
     DrsLyricsComponent,
-    SystemicProblemsComponent
+    SystemicProblemsComponent,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule,
   ],
   providers: [ScreenSizeService],
   bootstrap: [AppComponent]
