@@ -9,10 +9,12 @@ import { RunYourOwnComponent } from './pages/run-your-own/run-your-own.component
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 const routes: Routes = [
 
   { path: '*', component: FederatedServerListComponent },
+  { path: 'welcome', component: WelcomeComponent},
   { path: 'server-list', component: FederatedServerListComponent },
   { path: 'about', component: AboutComponent },
   { path: 'run-your-own', component: RunYourOwnComponent },

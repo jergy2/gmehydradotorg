@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ScreenSizeService } from './utilities/screen-size/screen-size.service';
 import { AboutComponent } from './pages/about/about.component';
 import { SidebarComponent } from './nav/sidebar/sidebar.component';
@@ -19,12 +18,12 @@ import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component'
 import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
 import { HeaderMenuComponent } from './nav/header-menu/header-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { WelcomeComponent } from './pages/welcome/welcome.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FederatedServerListComponent,
-    HomeComponent,
     AddServerPopupComponent,
     AboutComponent,
     SidebarComponent,
@@ -37,7 +36,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     RunYourOwnComponent,
     DrsLyricsComponent,
     SystemicProblemsComponent,
-    HeaderMenuComponent
+    HeaderMenuComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

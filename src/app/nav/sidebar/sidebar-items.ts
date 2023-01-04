@@ -3,6 +3,10 @@ import { SidebarItem } from "./sidebar-item.interface";
 export const sidebarItems: SidebarItem[] = [
 
     {
+        title: 'Welcome',
+        path: '/welcome'
+    },
+    {
         title: 'Fediverse Server List',
         path: '/server-list'
     },

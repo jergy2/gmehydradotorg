@@ -12,6 +12,7 @@ export const federatedServerList: FederatedServer[] = [
         adminEmail: 'superstork_admin@protonmail.com',
         registrationStatus: 'OPEN',
         registrationLink: '',
+        implementation: 'Mastodon',
     },
     {
         name: 'cybernetwork',
@@ -23,5 +24,6 @@ export const federatedServerList: FederatedServer[] = [
         adminEmail: '',
         registrationStatus: 'BY_INVITE',
         registrationLink: 'https://s.thecybernetwork.us/invite/Fjwriv6R',
+        implementation: 'Mastodon',
     },
 ]
