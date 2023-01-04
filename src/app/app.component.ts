@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {
-          this.router.navigate(['/server-list']);
+          this.router.navigate(['/welcome']);
         }
       }
     });

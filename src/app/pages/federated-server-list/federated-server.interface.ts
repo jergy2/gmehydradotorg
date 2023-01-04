@@ -8,4 +8,5 @@ export interface FederatedServer{
     adminEmail: string;
     registrationStatus: 'OPEN' | 'BY_INVITE' | 'CLOSED';
     registrationLink: string;
+    implementation: string;
 }

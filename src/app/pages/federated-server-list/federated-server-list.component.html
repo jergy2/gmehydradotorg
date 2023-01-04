@@ -1,10 +1,7 @@
-
-<app-home></app-home>
-<div class="server-list-root shadow" [ngClass]="{ 'small-root':screenIsMobile, 'large-root':!screenIsMobile }">
-
-    <div class="server-list" [ngClass]="{ 'small-list':screenIsMobile, 'large-list':!screenIsMobile }">
-        <div class="title">
-           Fediverse Server list
+<div class="generic-container">
+    <div class="generic-inner-container shadow">
+        <div class="generic-title">
+            Fediverse Server List
         </div>
         <div class="table-container">
             <table class="table table-small" *ngIf="screenIsMobile">
@@ -26,6 +23,9 @@
             <table class="table table-big" *ngIf="!screenIsMobile">
                 <tr>
                     <td>
+
+                    </td>
+                    <td>
                         URL
                     </td>
                     <td>
@@ -35,15 +35,16 @@
                     <td>
                         Server Status
                     </td>
-                    <!-- <td>
-                    DRS Ownership
-                </td> -->
+                    <td>Implementation</td>
                 </tr>
                 <tr>
                 </tr>
                 <tr *ngFor="let server of serverList">
                     <td>
-                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank">  {{ server.displayUrl }}</a>
+                        {{ (serverList.indexOf(server)+1) }}
+                    </td>
+                    <td>
+                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank"> {{ server.displayUrl }}</a>
                     </td>
                     <td> {{ userCount(server.userCount) }} </td>
 
@@ -54,12 +55,14 @@
                         <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
                             {{ registrationStatus(server) }}
                         </div>
-                        
+
                     </td>
                     <td class="center-horizontal">
                         <div class="green-status"></div>
                     </td>
-                    <!-- <td> {{ server.drsStatus }} </td> -->
+                    <td>
+                        {{ server.implementation }}
+                    </td>
                 </tr>
             </table>
         </div>
@@ -67,5 +70,4 @@
             <button class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to this list</button>
         </div>
     </div>
-    
 </div>
