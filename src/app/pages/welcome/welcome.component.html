@@ -1,17 +1,17 @@
 <div class="generic-container">
     <div class="generic-inner-container shadow">
         <div class="generic-title">
-            The GME Hydra Welcomes You
+            GME Hydra Welcomes You
         </div>
         <p>
             If you are a legitimate investor of GameStop looking for an online community that guarantees your freedom to discuss DRS and related topics of conversation, you've found the right place.
         </p>
         <p>
-            The GME Hydra is a network of fediverse servers owned and operated by DRS'd shareholders of GME, putting the power to express our voice into our own hands.
+            GME Hydra is a network of fediverse servers owned and operated by DRS'd shareholders of GME, putting the power to express our voice into our own hands.  It is an insurance policy against future cases of censorship and other issues that will inevitably be encountered within centralized social media networks.
         </p>
-        <div *ngIf="!isMobile" class="head-count-container">
+        <div *ngIf="!isMobile" class="head-count-container no-select">
             <div>
-                The GME Hydra is a beast with 
+                GME Hydra is a beast with 
             </div>
             <div class="server-count" (click)="onClickHeadCount()">
                 {{ serverCount }}
@@ -20,12 +20,12 @@
                 heads.
             </div>
         </div>
-        <div *ngIf="isMobile" class="head-count-container" style="margin-top: 20px; flex-direction:column;">
+        <div *ngIf="isMobile" class="head-count-container no-select" style="margin-top: 20px; flex-direction:column;">
             <div>
                 The GME Hydra is a beast with 
             </div>
             <div class="server-count" (click)="onClickHeadCount()">
-                
+
                 {{ serverCount }}
             </div>
             <div>

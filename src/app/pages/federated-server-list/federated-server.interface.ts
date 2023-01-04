@@ -9,4 +9,5 @@ export interface FederatedServer{
     registrationStatus: 'OPEN' | 'BY_INVITE' | 'CLOSED';
     registrationLink: string;
     implementation: string;
+    serverLocation: string;
 }

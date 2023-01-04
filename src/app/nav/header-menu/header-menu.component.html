@@ -6,7 +6,7 @@
         {{ title }}
     </div>
 </div>
-<div *ngIf="isExpanded" class="item-list">
+<div *ngIf="isExpanded" class="item-list no-select">
     <div *ngFor="let sidebarItem of sidebarItems" 
         class="menu-item"
         [routerLink]="sidebarItem.path" 

@@ -1,8 +1,11 @@
-<div class="generic-container">
-    <div class="generic-inner-container shadow">
+<div class="generic-container" style="width:100%;flex-grow: 2;">
+    <div class="generic-inner-container shadow" style="width:100%;flex-grow: 2;">
         <div class="generic-title">
             Fediverse Server List
         </div>
+        <p>
+            Join GME Hydra by becoming a member of any of the fediverse servers listed.
+        </p>
         <div class="table-container">
             <table class="table table-small" *ngIf="screenIsMobile">
                 <tr>
@@ -35,7 +38,8 @@
                     <td>
                         Server Status
                     </td>
-                    <td>Implementation</td>
+                    <td>Fediverse Software</td>
+                    <td>Location</td>
                 </tr>
                 <tr>
                 </tr>
@@ -43,7 +47,7 @@
                     <td>
                         {{ (serverList.indexOf(server)+1) }}
                     </td>
-                    <td>
+                    <td style="font-weight: 550;">
                         <a class="server-link" [attr.href]="server.fullUrl" target="_blank"> {{ server.displayUrl }}</a>
                     </td>
                     <td> {{ userCount(server.userCount) }} </td>
@@ -63,11 +67,39 @@
                     <td>
                         {{ server.implementation }}
                     </td>
+                    <td>{{ server.serverLocation }} </td>
                 </tr>
             </table>
         </div>
+        <div class="disclaimer" >
+            <div class="disclaimer-title no-select" (click)="onClickDisclaimer()">
+                <fa-icon [icon]="faExclamationTriangle" style="color:gray;margin-right: 10px;"></fa-icon>
+                <div>
+                    Email address required
+                </div>
+            </div>
+            <div *ngIf="disclaimerIsExpanded">
+                <p>
+                    An email address is required to sign up for an account on Mastodon instances and other fediverse instances. 
+                </p>
+                <p>
+                    If you do not want to use your primary email address in order to get an account in the fediverse, 
+                    you can obtain a new email address for free from any of the many mail providers out there, for example <a href="https://proton.me/mail?ref=icnbtn" target="_blank">Proton Mail</a>.
+                </p>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>
+<div class="generic-container">
+    <div class="generic-inner-container shadow">
+        <div class="generic-title">Grow GME Hydra</div>
         <div>
-            <button class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to this list</button>
+            <p>
+                Grow GME Hydra by starting your own fediverse server and adding it to this list.  The more that GME Hydra grows, the more resistant to censorship this community becomes.
+            </p>
+            <button class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the list</button>
         </div>
     </div>
 </div>

@@ -13,6 +13,7 @@ export const federatedServerList: FederatedServer[] = [
         registrationStatus: 'OPEN',
         registrationLink: '',
         implementation: 'Mastodon',
+        serverLocation: 'Toronto, Canada',
     },
     {
         name: 'cybernetwork',
@@ -25,5 +26,6 @@ export const federatedServerList: FederatedServer[] = [
         registrationStatus: 'BY_INVITE',
         registrationLink: 'https://s.thecybernetwork.us/invite/Fjwriv6R',
         implementation: 'Mastodon',
+        serverLocation: '',
     },
 ]

@@ -3,6 +3,7 @@ import { ScreenSizeService } from 'src/app/utilities/screen-size/screen-size.ser
 import { PopupService } from 'src/app/utilities/popup.service';
 import { federatedServerList } from './federated-server-list';
 import { FederatedServer } from './federated-server.interface';
+import { faExclamationTriangle, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -15,9 +16,12 @@ export class FederatedServerListComponent implements OnInit {
   constructor(private screenService: ScreenSizeService, private popupService: PopupService) { }
 
   private _isMobile: boolean = false;
+  private _disclaimerIsExpanded: boolean = false;
 
+  public get faExclamationTriangle(): IconDefinition { return faExclamationTriangle; }
   public get serverList(): FederatedServer[] { return federatedServerList; }
   public get screenIsMobile(): boolean { return this._isMobile; }
+  public get disclaimerIsExpanded(): boolean { return this._disclaimerIsExpanded; }
 
 
   ngOnInit(): void {
@@ -56,5 +60,8 @@ export class FederatedServerListComponent implements OnInit {
     this.popupService.addServer();
   }
 
+  public onClickDisclaimer(){
+    this._disclaimerIsExpanded = !this._disclaimerIsExpanded;
+  }
 
 }
