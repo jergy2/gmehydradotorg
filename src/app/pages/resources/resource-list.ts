@@ -11,7 +11,7 @@ export const resourceList: ResourceItem[] = [
         title: 'DRSGME.org',
         fullUrl: 'https://www.drsgme.org',
         displayUrl: 'www.drsgme.org',
-        description: 'Information website produced by GameStop investors to provide information about the very import Direct Registration System',
+        description: 'Information website produced by GameStop investors to provide information about the fundamentally important Direct Registration System',
     },
     {
         title: 'GameStop Direct-Registered Share Calculator',
