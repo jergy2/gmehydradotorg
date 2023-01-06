@@ -96,6 +96,8 @@ export class ServerFormComponent implements OnInit {
 
 
   private _buildApplication(serverForm: FormGroup):RequestData{
+    let emailValue: string = serverForm.value['email'];
+    emailValue = emailValue.trimEnd().trimStart();
     const requestData: RequestData = {
       email: serverForm.value['email'],
       url: serverForm.value['url'],
