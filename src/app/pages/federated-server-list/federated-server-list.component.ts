@@ -16,12 +16,16 @@ export class FederatedServerListComponent implements OnInit {
   constructor(private screenService: ScreenSizeService, private popupService: PopupService) { }
 
   private _isMobile: boolean = false;
-  private _disclaimerIsExpanded: boolean = false;
+  private _emailDisclaimerIsExpanded: boolean = false;
+  private _drsDisclaimerIsExpanded: boolean = false;
+  private _showGrowHydra: boolean = false;
 
   public get faExclamationTriangle(): IconDefinition { return faExclamationTriangle; }
   public get serverList(): FederatedServer[] { return federatedServerList; }
   public get screenIsMobile(): boolean { return this._isMobile; }
-  public get disclaimerIsExpanded(): boolean { return this._disclaimerIsExpanded; }
+  public get emailDisclaimerIsExpanded(): boolean { return this._emailDisclaimerIsExpanded; }
+  public get drsDisclaimerIsExpanded(): boolean { return this._drsDisclaimerIsExpanded; }
+  public get showGrowHydra(): boolean { return this._showGrowHydra; }
 
 
   ngOnInit(): void {
@@ -57,11 +61,14 @@ export class FederatedServerListComponent implements OnInit {
   }
 
   public onClickAddServer(){
-    this.popupService.addServer();
+    this._showGrowHydra = true;
   }
 
-  public onClickDisclaimer(){
-    this._disclaimerIsExpanded = !this._disclaimerIsExpanded;
+  public onClickEmailDisclaimer(){
+    this._emailDisclaimerIsExpanded = !this._emailDisclaimerIsExpanded;
+  }
+  public onClickDrsDisclaimer(){
+    this._drsDisclaimerIsExpanded = !this._drsDisclaimerIsExpanded;
   }
 
 }

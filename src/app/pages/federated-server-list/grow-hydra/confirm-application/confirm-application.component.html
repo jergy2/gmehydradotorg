@@ -1,0 +1,143 @@
+<div class="confirm-root">
+    <div style="display:flex;flex-direction:column;" *ngIf="showReview">
+        <p>
+            Please review your server details:
+        </p>
+        <div style="display:flex;flex-direction:column;">
+            <div class="row" [ngClass]="{'column': isMobile}">
+                <div class="label">
+                    Server Display Name
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}">
+                    {{ requestData.name }}
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'column': isMobile}">
+                <div class="label">
+                    Full Url
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.url }}
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'column': isMobile}">
+                <div class="label">
+                    Contact Email Address
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.email }}
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'column': isMobile}">
+                <div class="label">
+                    Server Location
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.location }}
+                </div>
+            </div>
+            <div class="row" [ngClass]="{'column': isMobile}">
+                <div class="label">
+                    Comment
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.comment }}
+                </div>
+            </div>
+            <div class="column" [ngClass]="{'column': isMobile}" style="margin-bottom: 10px;margin-top:10px;">
+                <div class="label">
+                    DRS Agreement
+                </div>
+                <div class="drs-agreement" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    The server specified by the above information is owned and operated by a DRS'd shareholder of GME.
+                    This server is a place where DRS and related topics of conversation will be welcomed and encouraged.
+                </div>
+            </div>
+        </div>
+        <div style="border-bottom: 1px solid gray; width: 100%;margin-top:5px;margin-bottom:5px;">
+
+        </div>
+        <div class="buttons-container" [ngClass]="{'mobile-buttons-container': isMobile}">
+            <button class="bttn bttn-primary" (click)="onClickGoBack()">Go back</button>
+            <button class="bttn bttn-primary" (click)="onClickSubmit()">Looks good! Submit</button>
+        </div>
+    </div>
+
+
+    <div style="display:flex;flex-direction:column;width:100%" *ngIf="showSuccess || showError">
+        <div *ngIf="showSuccess">
+            <p>Success!</p>
+            <p>
+                An email has been sent to <b>gmehydra@proton.me</b> and <b>{{senderAddress}}</b>
+            </p>
+            <p>If you do not receive the email within a few minutes and it is not in your spam folder, there may have
+                been
+                an issue.</p>
+            <p>If you do not receive the email, please manually send an email to <b>gmehydra@proton.me</b> with the
+                following information</p>
+        </div>
+        <div *ngIf="showError" >
+            <p style="color:red;">There has been an error:</p>
+            <p style="color:red;">{{ errorMessage }} </p>
+            <p>Please try again, or manually send an email to <b>gmehydra@proton.me</b> with the below information.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;width:100%">
+            <div class="column">
+                <div class="label">
+                    Server Display Name
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}">
+                    {{ requestData.name }}
+                </div>
+            </div>
+            <div class="column">
+                <div class="label">
+                    Full Url
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.url }}
+                </div>
+            </div>
+            <div class="column">
+                <div class="label">
+                    Contact Email Address
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.email }}
+                </div>
+            </div>
+            <div class="column">
+                <div class="label">
+                    Server Location
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.location }}
+                </div>
+            </div>
+            <div class="column">
+                <div class="label">
+                    Comment
+                </div>
+                <div class="value" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    {{ requestData.comment }}
+                </div>
+            </div>
+            <div class="column" [ngClass]="{'column': isMobile}" style="margin-bottom: 10px;margin-top:10px;">
+                <div class="label">
+                    DRS Agreement
+                </div>
+                <div class="drs-agreement" [ngClass]="{'mobile-value': isMobile}" [ngStyle]="ngStyle">
+                    The server specified by the above information is owned and operated by a DRS'd shareholder of GME.
+                    This server is a place where DRS and related topics of conversation will be welcomed and encouraged.
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="showLoading">
+        <div class="lds-ripple">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>

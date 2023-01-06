@@ -1,0 +1,60 @@
+<div style="display:flex;flex-direction:column;">
+    <p>Please provide the following details about your fediverse server</p>
+    <p>Submissions will be manually reviewed and added to the list</p>
+    <div [formGroup]="serverForm" class="server-form">
+        <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <label for="full-url" class="form-label">Full server URL: </label>
+            <input id="full-url" type="text" class="form-input" formControlName="url" placeholder="www.yoursite.domain"
+                [ngClass]="{'invalid-row': isInvalidDomain}">
+        </div>
+        <div *ngIf="isInvalidDomain" class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <div class="form-label"></div>
+            <div class="form-input" style="color:red;">Must have a valid domain</div>
+        </div>
+        <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <label for="email" class="form-label">Contact email address: </label>
+            <input id="email" type="text" class="form-input" formControlName="email" placeholder="admin@yoursite.domain"
+                [ngClass]="{'invalid-row': isInvalidEmail}">
+        </div>
+        <div *ngIf="isInvalidEmail" class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <div class="form-label"></div>
+            <div class="form-input" style="color:red;">Must have a valid contact email</div>
+        </div>
+        <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <label for="server-name" class="form-label">Server display name: </label>
+            <input id="server-name" class="form-input" type="text" formControlName="name">
+        </div>
+        <div *ngIf="isInvalidName" class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <div class="form-label"></div>
+            <div class="form-input" style="color:red;">Must have a display name</div>
+        </div>
+        <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <label for="location" class="form-label">Server location: </label>
+            <input id="location" type="text" class="form-input" formControlName="location" placeholder="City, Country">
+        </div>
+        <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
+            <label for="comment" class="form-label">Comments: </label>
+            <input id="comment" type="text" class="form-input" formControlName="comment"
+                placeholder="Add any other information">
+        </div>
+    </div>
+    <div style="width: 100%;border-bottom: 1px solid gray;margin-top: 20px; margin-bottom: 10px;"></div>
+    <div>
+        <div style="color: var(--color-special);margin-bottom: 10px;">DRS Agreement: </div>
+        <div style="padding: 10px; background-color: rgb(240, 240, 240); border-radius: 10px;">
+            The server specified by the above information is owned and operated by a DRS'd shareholder of GME.
+            This server is a place where DRS and related topics of conversation will be welcomed and encouraged.
+        </div>
+        <p>The above statement is true <input type="checkbox" id="drs" name="drs"
+                (change)="drsCheckCheckBoxvalue($event.target)" [checked]="drsIsChecked"> </p>
+
+    </div>
+    <div class="button-container">
+        <div style="margin-right: 10px;">
+            <div class="gray-circle" *ngIf="!agreeToDrs"></div>
+            <div class="purple-circle" *ngIf="agreeToDrs"></div>
+        </div>
+        <button class="bttn bttn-primary" [disabled]="!submitButtonIsEnabled"
+            (click)="onClickSubmitForm()">Submit</button>
+    </div>
+</div>

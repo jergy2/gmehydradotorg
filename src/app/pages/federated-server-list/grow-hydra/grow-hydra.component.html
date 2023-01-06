@@ -1,0 +1,17 @@
+<div class="generic-inner-container" style="border:1px solid rgb(235, 235, 235);" *ngIf="!applicationSubmitted">
+    <div class="generic-title">Add your server to GME Hydra</div>
+    <div>
+        <button class="bttn bttn.primary" (click)="onClickAddExisting()" *ngIf="showButtons">Already have a
+            server</button>
+        <button class="bttn bttn.primary" (click)="onClickStartNew()" *ngIf="showButtons">Start a new server</button>
+    </div>
+    <div *ngIf="showForm">
+        <app-server-form (submit)="onFormSubmitted()"></app-server-form>
+    </div>
+    <div *ngIf="showConfirmation">
+        <app-confirm-application (goBack)="onGoToForm()"></app-confirm-application>
+    </div>
+</div>
+<div class="generic-inner-container" style="border:1px solid rgb(235, 235, 235);"  *ngIf="applicationSubmitted">
+    <p>Thanks for submitting your server information!</p>
+</div>

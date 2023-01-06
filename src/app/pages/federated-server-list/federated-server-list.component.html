@@ -4,7 +4,10 @@
             Fediverse Server List
         </div>
         <p>
-            Join GME Hydra by becoming a member of any of the fediverse servers listed.
+            Join GME Hydra by becoming a member of any of the fediverse servers listed. </p>
+        <p>
+            By becoming a member of any of the following servers, you will have access to the greater fediverse and will
+            be able to communicate with any other members from any of the other instances.
         </p>
         <div class="table-container">
             <table class="table table-small" *ngIf="screenIsMobile">
@@ -71,24 +74,37 @@
                 </tr>
             </table>
         </div>
-        <div class="disclaimer" >
-            <div class="disclaimer-title no-select" (click)="onClickDisclaimer()">
+        <div class="disclaimer">
+            <div class="disclaimer-title no-select" (click)="onClickDrsDisclaimer()">
+                <div class="purple-circle"></div>
+                DRS'd Operators
+            </div>
+            <div *ngIf="drsDisclaimerIsExpanded">
+                <p>
+                    All servers in this list are owned and operated by DRS'd shareholders of GME.
+                </p>
+            </div>
+        </div>
+        <div class="disclaimer">
+            <div class="disclaimer-title no-select" (click)="onClickEmailDisclaimer()">
                 <fa-icon [icon]="faExclamationTriangle" style="color:gray;margin-right: 10px;"></fa-icon>
                 <div>
                     Email address required
                 </div>
             </div>
-            <div *ngIf="disclaimerIsExpanded">
+            <div *ngIf="emailDisclaimerIsExpanded">
                 <p>
-                    An email address is required to sign up for an account on Mastodon instances and other fediverse instances. 
+                    An email address is required to sign up for an account on Mastodon instances and other fediverse
+                    instances.
                 </p>
                 <p>
-                    If you do not want to use your primary email address in order to get an account in the fediverse, 
-                    you can obtain a new email address for free from any of the many mail providers out there, for example <a href="https://proton.me/mail?ref=icnbtn" target="_blank">Proton Mail</a>.
+                    If you do not want to use your primary email address in order to get an account in the fediverse,
+                    you can obtain a new email address for free from any of the many mail providers out there, for
+                    example <a href="https://proton.me/mail?ref=icnbtn" target="_blank">Proton Mail</a>.
                 </p>
             </div>
-            
-            
+
+
         </div>
     </div>
 </div>
@@ -97,9 +113,15 @@
         <div class="generic-title">Grow GME Hydra</div>
         <div>
             <p>
-                Grow GME Hydra by starting your own fediverse server and adding it to this list.  The more that GME Hydra grows, the more resistant to censorship this community becomes.
+                Grow GME Hydra by starting your own fediverse server and adding it to this list.
+                The more that GME Hydra grows, the more powerful and more resistant to censorship this community
+                becomes.
             </p>
-            <button class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the list</button>
+            <button *ngIf="!showGrowHydra" class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the
+                list</button>
+        </div>
+        <div>
+            <app-grow-hydra *ngIf="showGrowHydra"></app-grow-hydra>
         </div>
     </div>
 </div>

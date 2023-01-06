@@ -19,6 +19,11 @@ import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-pr
 import { HeaderMenuComponent } from './nav/header-menu/header-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
+import { GrowHydraComponent } from './pages/federated-server-list/grow-hydra/grow-hydra.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ServerFormComponent } from './pages/federated-server-list/grow-hydra/server-form/server-form.component';
+import { ConfirmApplicationComponent } from './pages/federated-server-list/grow-hydra/confirm-application/confirm-application.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -37,10 +42,15 @@ import { WelcomeComponent } from './pages/welcome/welcome.component';
     DrsLyricsComponent,
     SystemicProblemsComponent,
     HeaderMenuComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    GrowHydraComponent,
+    ServerFormComponent,
+    ConfirmApplicationComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FontAwesomeModule,
   ],
