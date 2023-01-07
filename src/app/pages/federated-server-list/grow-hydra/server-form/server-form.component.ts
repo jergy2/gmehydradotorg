@@ -12,7 +12,7 @@ import { RequestData } from './request-data.interface';
 })
 export class ServerFormComponent implements OnInit {
 
-  constructor(private screenService: ScreenSizeService, private growService:GrowHydraService) { }
+  constructor(private screenService: ScreenSizeService, private growService: GrowHydraService) { }
 
   private _isInvalidDomain: boolean = false;
   private _isInvalidEmail: boolean = false;
@@ -39,68 +39,76 @@ export class ServerFormComponent implements OnInit {
     comment: new FormControl(''),
   });
 
-  @Output() submit: EventEmitter<boolean> =  new EventEmitter<boolean>();
+  @Output() submit: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   ngOnInit(): void {
-    this.serverForm.valueChanges.subscribe(() => { this._checkFormValidity(); });
-    this.serverForm.patchValue({
-      url: this.growService.requestData.url,
-      email: this.growService.requestData.email,
-      name: this.growService.requestData.name,
-      location: this.growService.requestData.location,
-      comment: this.growService.requestData.comment,
-    });
+    if (this.growService.requestData.url !== '' && this.growService.requestData.email !== '' && this.growService.requestData.name !== '') {
+      this.serverForm.patchValue({
+        url: this.growService.requestData.url,
+        email: this.growService.requestData.email,
+        name: this.growService.requestData.name,
+        location: this.growService.requestData.location,
+        comment: this.growService.requestData.comment,
+      });
+    }
+    this.serverForm.valueChanges.subscribe(() => { this._enableSubmitButton(); });
     this._drsIsChecked = this.growService.agreeToDrs;
+    this._enableSubmitButton();
   }
 
-  public onClickSubmitForm(){
+  public onClickSubmitForm() {
 
-    if(this.serverForm.controls['url'].valid){
-      this._isInvalidDomain = false;      
-    }else{
-      this._isInvalidDomain = true;     
+    if (this.serverForm.controls['url'].valid) {
+      this._isInvalidDomain = false;
+    } else {
+      this._isInvalidDomain = true;
     }
-    if(this.serverForm.controls['email'].valid){
+    if (this.serverForm.controls['email'].valid) {
       this._isInvalidEmail = false;
-    }else{
+    } else {
       this._isInvalidEmail = true;
     }
-    if(this.serverForm.controls['name'].valid){
+    if (this.serverForm.controls['name'].valid) {
       this._isInvalidName = false;
-    }else{
+    } else {
       this._isInvalidName = true;
     }
-    if(this.serverForm.valid){
+    if (this.serverForm.valid) {
       const request = this._buildApplication(this.serverForm);
       this.growService.requestData = request;
       this.submit.emit(true);
     }
   }
-  
-  private _checkFormValidity(){
-    const urlIsTouched: boolean = this.serverForm.controls['url'].touched;
-    const emailIsTouched: boolean = this.serverForm.controls['email'].touched;
-    const locationIsTouched: boolean = this.serverForm.controls['location'].touched;
-    const agreeToDrs: boolean = this.agreeToDrs;
-    const conditions = urlIsTouched && emailIsTouched && locationIsTouched && agreeToDrs;
-    if(conditions){
+
+  private _enableSubmitButton() {
+    if(this.serverForm.valid && this.agreeToDrs){
       this._submitButtonIsEnabled = true;
     }else{
-      this._submitButtonIsEnabled = false;
+      const urlIsTouched: boolean = this.serverForm.controls['url'].valid;
+      const emailIsTouched: boolean = this.serverForm.controls['email'].valid;
+      const locationIsTouched: boolean = this.serverForm.controls['location'].valid;
+      const agreeToDrs: boolean = this.agreeToDrs;
+      const conditions = urlIsTouched && emailIsTouched && locationIsTouched && agreeToDrs;
+      if (conditions) {
+        this._submitButtonIsEnabled = true;
+      } else {
+        this._submitButtonIsEnabled = false;
+      }
     }
+
   }
 
-  public drsCheckCheckBoxvalue(event: any){
-    if(event.checked === true){
+  public drsCheckCheckBoxvalue(event: any) {
+    if (event.checked === true) {
       this.growService.onAgreeToDrs(true);
-    }else{
+    } else {
       this.growService.onAgreeToDrs(false);
     }
-    this._checkFormValidity();
+    this._enableSubmitButton();
   }
 
 
-  private _buildApplication(serverForm: FormGroup):RequestData{
+  private _buildApplication(serverForm: FormGroup): RequestData {
     let emailValue: string = serverForm.value['email'];
     emailValue = emailValue.trimEnd().trimStart();
     const requestData: RequestData = {
