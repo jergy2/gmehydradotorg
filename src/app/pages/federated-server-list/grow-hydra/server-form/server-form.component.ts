@@ -78,7 +78,12 @@ export class ServerFormComponent implements OnInit {
   }
   
   private _checkFormValidity(){
-    if(this.agreeToDrs === true && this.serverForm.valid){
+    const urlIsTouched: boolean = this.serverForm.controls['url'].touched;
+    const emailIsTouched: boolean = this.serverForm.controls['email'].touched;
+    const locationIsTouched: boolean = this.serverForm.controls['location'].touched;
+    const agreeToDrs: boolean = this.agreeToDrs;
+    const conditions = urlIsTouched && emailIsTouched && locationIsTouched && agreeToDrs;
+    if(conditions){
       this._submitButtonIsEnabled = true;
     }else{
       this._submitButtonIsEnabled = false;
