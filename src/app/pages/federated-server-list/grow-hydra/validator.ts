@@ -1,9 +1,13 @@
 import { AbstractControl, ValidatorFn, ValidationErrors } from '@angular/forms';
 
-export function validate(urlRegExp: RegExp): ValidatorFn {
+export function validate(testAgainstExp: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
-        const isDomain = urlRegExp.test(control.value);
+        const test = testAgainstExp.test(control.value);
         //returns null if valid.
-        return !isDomain ? { url: { value: control.value } } : null;
+        if(test){
+            return null;
+        }else{
+            return { value: control.value }
+        }
     };
 }

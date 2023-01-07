@@ -18,7 +18,8 @@ export class ServerFormComponent implements OnInit {
   private _isInvalidEmail: boolean = false;
   private _isInvalidName: boolean = false;
   private _regTestDomain: RegExp = new RegExp('([a-zA-Z-\d]+)?([.][a-zA-Z-\d]+){1,2}');
-  private _regTestEmail: RegExp = new RegExp('([a-zA-Z-\d]+)@([a-zA-Z-\d]+)[.]([a-zA-Z-\d]+)');
+  // private _regTestEmail: RegExp = new RegExp('([a-zA-Z-\d]+)@([a-zA-Z-\d]+)[.]([a-zA-Z-\d]+)');
+  private _regTestEmail: RegExp = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
   private _submitButtonIsEnabled: boolean = false;
   private _drsIsChecked: boolean = false;
 
@@ -33,7 +34,7 @@ export class ServerFormComponent implements OnInit {
 
   public serverForm = new FormGroup({
     url: new FormControl('', [Validators.required, validate(this._regTestDomain)]),
-    email: new FormControl('', [Validators.required, validate(this._regTestEmail)]),
+    email: new FormControl('', [Validators.required, Validators.pattern(this._regTestEmail)]),
     name: new FormControl('', [Validators.required]),
     location: new FormControl(''),
     comment: new FormControl(''),
@@ -83,6 +84,8 @@ export class ServerFormComponent implements OnInit {
   private _enableSubmitButton() {
     if(this.agreeToDrs === true){
       this._submitButtonIsEnabled = true;
+    }else{
+      this._submitButtonIsEnabled = false;
     }
   }
 
