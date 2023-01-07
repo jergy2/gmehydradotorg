@@ -13,7 +13,7 @@
         </div>
         <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
             <label for="email" class="form-label">Contact email address: </label>
-            <input id="email" type="text" class="form-input" formControlName="email" placeholder="admin@yoursite.domain"
+            <input id="email" type="email" class="form-input" formControlName="email" placeholder="admin@yoursite.domain"
                 [ngClass]="{'invalid-row': isInvalidEmail}">
         </div>
         <div *ngIf="isInvalidEmail" class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
