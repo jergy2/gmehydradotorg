@@ -81,21 +81,9 @@ export class ServerFormComponent implements OnInit {
   }
 
   private _enableSubmitButton() {
-    if(this.serverForm.valid && this.agreeToDrs){
+    if(this.agreeToDrs === true){
       this._submitButtonIsEnabled = true;
-    }else{
-      const urlIsTouched: boolean = this.serverForm.controls['url'].valid;
-      const emailIsTouched: boolean = this.serverForm.controls['email'].valid;
-      const locationIsTouched: boolean = this.serverForm.controls['location'].valid;
-      const agreeToDrs: boolean = this.agreeToDrs;
-      const conditions = urlIsTouched && emailIsTouched && locationIsTouched && agreeToDrs;
-      if (conditions) {
-        this._submitButtonIsEnabled = true;
-      } else {
-        this._submitButtonIsEnabled = false;
-      }
     }
-
   }
 
   public drsCheckCheckBoxvalue(event: any) {
