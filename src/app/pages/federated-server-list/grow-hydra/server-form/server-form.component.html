@@ -54,7 +54,8 @@
             <div class="gray-circle" *ngIf="!agreeToDrs"></div>
             <div class="purple-circle" *ngIf="agreeToDrs"></div>
         </div>
-        <button class="bttn bttn-primary" [disabled]="!submitButtonIsEnabled"
+        <button class="bttn bttn-primary" *ngIf="!submitButtonIsEnabled" disabled>Submit</button>
+        <button class="bttn bttn-primary" style="border:1px solid var(--color-special);" *ngIf="submitButtonIsEnabled"
             (click)="onClickSubmitForm()">Submit</button>
     </div>
 </div>
