@@ -1,15 +1,16 @@
 <div class="generic-container" style="width:100%;flex-grow: 2;">
     <div class="generic-inner-container shadow" style="width:100%;flex-grow: 2;">
         <div class="generic-title">
-            Fediverse Server List
+            GME Hydra Fediverse Server List
         </div>
         <p>
             Join GME Hydra by becoming a member of any of the fediverse servers listed. </p>
         <p>
-            By signing up for an account on any of the following servers, you will be joining the community of millions of other people that are already part of the <a href="/fediverse">fediverse</a>.
+            By signing up for an account on any of the following servers, you will be joining the community of millions
+            of other people that are already part of the <a href="/fediverse">fediverse</a>.
         </p>
         <p>You can change which server your account is on at any time.</p>
-        <div class="table-container">
+        <!-- <div class="table-container">
             <table class="table table-small" *ngIf="screenIsMobile">
                 <tr>
                     <td>URL</td>
@@ -73,6 +74,36 @@
                     <td>{{ server.serverLocation }} </td>
                 </tr>
             </table>
+        </div> -->
+        <div style="width:100%;display:flex;flex-direction:column;">
+            <div *ngFor="let server of serverList" class="server-item-container">
+                <div class="server-item-top-row">
+                    <div style="display:flex;flex-direction:column">
+                        <div style="font-weight: bold;">
+                            {{ server.name }}
+                        </div>
+                        <div>
+                            <a [href]="server.fullUrl">{{server.displayUrl}}</a>
+                        </div>
+
+                    </div>
+                    <div>
+                        <div class="green-status"></div>
+                    </div>
+                </div>
+                <div style="font-size: 0.8em;">User count: {{ userCount(server.userCount) }} </div>
+                <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{ server.serverLocation
+                    }} </div>
+                <div style="font-size: 0.8em;">Fediverse software: {{ server.implementation }} </div>
+                <div style="margin-top: 10px;display:flex;flex-direction: row;">
+                    <div *ngIf="server.registrationStatus === 'BY_INVITE'">
+                        Registration:  <a class="server-link" [attr.href]="server.registrationLink" target="_blank"> By invite</a>
+                    </div>
+                    <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
+                        Registration:  {{ registrationStatus(server) }}
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="disclaimer">
             <div class="disclaimer-title no-select" (click)="onClickDrsDisclaimer()">
@@ -123,5 +154,15 @@
         <div>
             <app-grow-hydra *ngIf="showGrowHydra"></app-grow-hydra>
         </div>
+    </div>
+</div>
+<div class="generic-container">
+    <div class="generic-inner-container shadow">
+        <div class="generic-title">Join a Different Fediverse Server</div>
+        <p>If you want to join the fediverse without creating an account on one of the GME Hydra servers, you can sign
+            up on any open server on the Mastodon public server list or instances of other fediverse software projects.
+        </p>
+        <p style="font-size: 1.1em;"><a href="https://joinmastodon.org/servers" target="_blank">Servers - Mastodon</a>
+        </p>
     </div>
 </div>
