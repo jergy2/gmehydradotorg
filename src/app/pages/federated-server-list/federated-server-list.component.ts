@@ -27,6 +27,8 @@ export class FederatedServerListComponent implements OnInit {
   public get drsDisclaimerIsExpanded(): boolean { return this._drsDisclaimerIsExpanded; }
   public get showGrowHydra(): boolean { return this._showGrowHydra; }
 
+  public get isLargeScreen(): boolean { return this.screenService.isFullSize; }
+
 
   ngOnInit(): void {
     this._isMobile = this.screenService.isSmallSize;

@@ -10,4 +10,6 @@ export interface FederatedServer{
     registrationLink: string;
     implementation: string;
     serverLocation: string;
+    thumbnailFile: string;
+    serverDescription: string;
 }

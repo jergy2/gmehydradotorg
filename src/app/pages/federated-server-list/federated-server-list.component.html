@@ -83,7 +83,7 @@
                             {{ server.name }}
                         </div>
                         <div>
-                            <a [href]="server.fullUrl">{{server.displayUrl}}</a>
+                            <a [href]="server.fullUrl" target="_blank">{{server.displayUrl}}</a>
                         </div>
 
                     </div>
@@ -91,17 +91,30 @@
                         <div class="green-status"></div>
                     </div>
                 </div>
-                <div style="font-size: 0.8em;">User count: {{ userCount(server.userCount) }} </div>
-                <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{ server.serverLocation
-                    }} </div>
-                <div style="font-size: 0.8em;">Fediverse software: {{ server.implementation }} </div>
-                <div style="margin-top: 10px;display:flex;flex-direction: row;">
-                    <div *ngIf="server.registrationStatus === 'BY_INVITE'">
-                        Registration:  <a class="server-link" [attr.href]="server.registrationLink" target="_blank"> By invite</a>
+                <div style="display:flex;flex-direction:row;justify-content: space-between;" [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
+                    <div style="display:flex;flex-direction:column;" >
+                        <div style="font-size: 0.8em;">User count: {{ userCount(server.userCount) }} </div>
+                        <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{
+                            server.serverLocation
+                            }} </div>
+                        <div style="font-size: 0.8em;">Fediverse software: {{ server.implementation }} </div>
+                        <div style="margin-top: 10px;display:flex;flex-direction: row;">
+                            <div *ngIf="server.registrationStatus === 'BY_INVITE'">
+                                Registration: <a class="server-link" [attr.href]="server.registrationLink"
+                                    target="_blank"> By invite</a>
+                            </div>
+                            <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
+                                Registration: {{ registrationStatus(server) }}
+                            </div>
+                        </div>
                     </div>
-                    <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
-                        Registration:  {{ registrationStatus(server) }}
+                    <div>
+                        <img [src]="server.thumbnailFile" style="max-width: 275px;">
                     </div>
+                </div>
+                <div>
+                    <p style="font-size: 0.8em; color: gray;">{{ server.serverDescription }}</p>
+                    
                 </div>
             </div>
         </div>
