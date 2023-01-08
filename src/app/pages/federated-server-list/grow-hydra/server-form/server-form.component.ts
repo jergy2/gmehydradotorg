@@ -19,7 +19,7 @@ export class ServerFormComponent implements OnInit {
   private _isInvalidName: boolean = false;
   private _regTestDomain: RegExp = new RegExp('([a-zA-Z-\d]+)?([.][a-zA-Z-\d]+){1,2}');
   // private _regTestEmail: RegExp = new RegExp('([a-zA-Z-\d]+)@([a-zA-Z-\d]+)[.]([a-zA-Z-\d]+)');
-  private _regTestEmail: RegExp = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$');
+  private _regTestEmail: RegExp = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$');
   private _submitButtonIsEnabled: boolean = false;
   private _drsIsChecked: boolean = false;
 
@@ -58,7 +58,8 @@ export class ServerFormComponent implements OnInit {
   }
 
   public onClickSubmitForm() {
-
+    // const emailToLower = this.serverForm.controls['email'].value
+    // this.serverForm.controls['email'].patchValue
     if (this.serverForm.controls['url'].valid) {
       this._isInvalidDomain = false;
     } else {
