@@ -17,6 +17,7 @@ export const federatedServerList: FederatedServer[] = [
         thumbnailFile: 'assets/superstork-thumb.png',
         serverDescription: 'The superstork protects the nest. This is a place for theoretical discussions about business and stocks - specifically GameStop stock ($GME). Opinions and memes welcome.',
         exploreLink: 'https://www.superstork.org/public/local',
+        aboutLink: 'https://www.superstork.org/about',
     },
     {
         name: 'The Cyber Network',
@@ -33,5 +34,6 @@ export const federatedServerList: FederatedServer[] = [
         thumbnailFile: 'assets/cybernetwork-thumb.png',
         serverDescription: 'A place for those of us that want to be a part of a decentralized future. We are gamers, techs, drone pilots, and a multitude of other hobbyists.',
         exploreLink: 'https://s.thecybernetwork.us/public/local',
+        aboutLink: 'https://s.thecybernetwork.us/about',
     },
 ]

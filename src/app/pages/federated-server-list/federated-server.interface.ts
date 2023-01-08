@@ -13,4 +13,5 @@ export interface FederatedServer{
     thumbnailFile: string;
     serverDescription: string;
     exploreLink: string;
+    aboutLink: string;
 }

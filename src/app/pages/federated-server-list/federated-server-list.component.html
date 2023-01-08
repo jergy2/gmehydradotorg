@@ -27,7 +27,8 @@
                     </div>
                 </div>
                 <div style="display:flex;flex-direction:row;justify-content: space-between;"
-                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
+                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
+                                 'align-items': isLargeScreen ? '': 'center' }">
                     <div style="display:flex;flex-direction:column; min-width: 260px;">
                         <div style="font-size: 0.8em;">{{ userCount(server.userCount) }} users </div>
                         <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{
@@ -43,12 +44,14 @@
                                 Registration: {{ registrationStatus(server) }}
                             </div>
                         </div>
+                        <div style="margin-top:10px;font-size:0.8em;">
+                            See what's happening locally on <a [href]="server.exploreLink" target="_blank">{{ server.name }}</a> 
+                        </div>
                     </div>
-                    <div style="width:100%;display:flex;align-items: center;margin: 10px;" 
-                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row-reverse': 'column' }"
-                    >
-                        <a [href]="server.exploreLink" target="_blank"><img [src]="server.thumbnailFile"
-                                style="border-radius: 10px;"
+                    <div style="width:100%;display:flex;align-items: center;margin: 10px;"
+                        [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row-reverse': 'column' }">
+                        <a [href]="server.aboutLink" target="_blank">
+                            <img [src]="server.thumbnailFile" style="border-radius: 10px;"
                                 [ngStyle]="{ 'max-width': isLargeScreen ? '450px': '275px' }"></a>
 
 
@@ -58,7 +61,8 @@
                     <p style="font-size: 0.9em; color: rgb(26, 26, 26);">{{ server.serverDescription }}</p>
 
                 </div>
-                <div style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
+                <div
+                    style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
                     GME Hydra Head {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
                 </div>
             </div>
