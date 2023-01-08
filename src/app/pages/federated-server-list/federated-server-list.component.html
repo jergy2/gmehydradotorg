@@ -10,71 +10,6 @@
             of other people that are already part of the <a href="/fediverse">fediverse</a>.
         </p>
         <p>You can change which server your account is on at any time.</p>
-        <!-- <div class="table-container">
-            <table class="table table-small" *ngIf="screenIsMobile">
-                <tr>
-                    <td>URL</td>
-                    <td>Users</td>
-                    <td></td>
-                </tr>
-                <tr *ngFor="let server of serverList">
-                    <td>
-                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank"> {{ server.displayUrl }}</a>
-                    </td>
-                    <td> {{ userCount(server.userCount) }} </td>
-                    <td class="center-horizontal">
-                        <div class="green-status"></div>
-                    </td>
-                </tr>
-            </table>
-            <table class="table table-big" *ngIf="!screenIsMobile">
-                <tr>
-                    <td>
-
-                    </td>
-                    <td>
-                        URL
-                    </td>
-                    <td>
-                        User count
-                    </td>
-                    <td>Registration</td>
-                    <td>
-                        Server Status
-                    </td>
-                    <td>Fediverse Software</td>
-                    <td>Location</td>
-                </tr>
-                <tr>
-                </tr>
-                <tr *ngFor="let server of serverList">
-                    <td>
-                        {{ (serverList.indexOf(server)+1) }}
-                    </td>
-                    <td style="font-weight: 550;">
-                        <a class="server-link" [attr.href]="server.fullUrl" target="_blank"> {{ server.displayUrl }}</a>
-                    </td>
-                    <td> {{ userCount(server.userCount) }} </td>
-
-                    <td>
-                        <div *ngIf="server.registrationStatus === 'BY_INVITE'">
-                            <a class="server-link" [attr.href]="server.registrationLink" target="_blank"> By invite</a>
-                        </div>
-                        <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
-                            {{ registrationStatus(server) }}
-                        </div>
-
-                    </td>
-                    <td class="center-horizontal">
-                        <div class="green-status"></div>
-                    </td>
-                    <td>
-                        {{ server.implementation }}
-                    </td>
-                    <td>{{ server.serverLocation }} </td>
-                </tr>
-            </table>
-        </div> -->
         <div style="width:100%;display:flex;flex-direction:column;">
             <div *ngFor="let server of serverList" class="server-item-container">
                 <div class="server-item-top-row">
@@ -91,9 +26,10 @@
                         <div class="green-status"></div>
                     </div>
                 </div>
-                <div style="display:flex;flex-direction:row;justify-content: space-between;" [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
-                    <div style="display:flex;flex-direction:column;" >
-                        <div style="font-size: 0.8em;">User count: {{ userCount(server.userCount) }} </div>
+                <div style="display:flex;flex-direction:row;justify-content: space-between;"
+                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
+                    <div style="display:flex;flex-direction:column; min-width: 260px;">
+                        <div style="font-size: 0.8em;">{{ userCount(server.userCount) }} users </div>
                         <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{
                             server.serverLocation
                             }} </div>
@@ -108,13 +44,22 @@
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <img [src]="server.thumbnailFile" style="max-width: 275px;">
+                    <div style="width:100%;display:flex;align-items: center;margin: 10px;" 
+                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row-reverse': 'column' }"
+                    >
+                        <a [href]="server.exploreLink" target="_blank"><img [src]="server.thumbnailFile"
+                                style="border-radius: 10px;"
+                                [ngStyle]="{ 'max-width': isLargeScreen ? '450px': '275px' }"></a>
+
+
                     </div>
                 </div>
                 <div>
-                    <p style="font-size: 0.8em; color: gray;">{{ server.serverDescription }}</p>
-                    
+                    <p style="font-size: 0.9em; color: rgb(26, 26, 26);">{{ server.serverDescription }}</p>
+
+                </div>
+                <div style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
+                    GME Hydra Head {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
                 </div>
             </div>
         </div>

@@ -39,13 +39,13 @@ export class FederatedServerListComponent implements OnInit {
 
   public userCount(count: number): string { 
     if(count < 100){
-      return '< 100';
+      return 'less than 100';
     }else if(count >= 100 && count < 1000){
-      return '100 to 999';
+      return 'less than 1,000';
     }else if(count >= 1000 && count < 10000){
-      return '1,000 to 9,999';
+      return 'less than 10,000';
     }else if(count >= 10000 && count < 100000){
-      return '10,000 to 99,999';
+      return 'less than 100,000';
     }else{
       return '';
     }
