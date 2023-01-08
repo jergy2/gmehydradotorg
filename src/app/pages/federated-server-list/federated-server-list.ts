@@ -15,7 +15,7 @@ export const federatedServerList: FederatedServer[] = [
         implementation: 'Mastodon',
         serverLocation: 'Toronto, Canada',
         thumbnailFile: 'assets/superstork-thumb.png',
-        serverDescription: 'The superstork watches and protects the nest. This is a place for theoretical discussions about business and stocks - specifically GameStop stock ($GME). Opinions and memes welcome. None of this is financial advice. This server is not affiliated with GameStop Corp. This server is not affiliated with r/superstonk. Server is based in Toronto, Canada',
+        serverDescription: 'The superstork protects the nest. This is a place for theoretical discussions about business and stocks - specifically GameStop stock ($GME). Opinions and memes welcome.',
         exploreLink: 'https://www.superstork.org/public/local',
     },
     {
