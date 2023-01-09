@@ -1,3 +1,5 @@
+import { OperatorCredential } from "./operator-credential.interface";
+
 export interface FederatedServer{
     name: string;
     displayUrl: string;
@@ -6,6 +8,7 @@ export interface FederatedServer{
     serverStatus: string;
     drsStatus: string;
     adminEmail: string;
+    adminCreds: OperatorCredential[];
     registrationStatus: 'OPEN' | 'BY_INVITE' | 'CLOSED';
     registrationLink: string;
     implementation: string;

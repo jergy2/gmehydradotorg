@@ -10,6 +10,10 @@ export const federatedServerList: FederatedServer[] = [
         serverStatus: '',
         drsStatus: '',
         adminEmail: 'superstork_admin@protonmail.com',
+        adminCreds: [
+            {credName: '@jersan', credUrl: 'https://www.superstork.org/@jersan'},
+            {credName: 'u/jersan', credUrl: 'https://www.reddit.com/user/jersan'},
+        ],
         registrationStatus: 'OPEN',
         registrationLink: '',
         implementation: 'Mastodon',
@@ -27,6 +31,10 @@ export const federatedServerList: FederatedServer[] = [
         serverStatus: '',
         drsStatus: '',
         adminEmail: 'contact@thecybernetwork.us',
+        adminCreds: [
+            {credName: '@venivv', credUrl: 'https://s.thecybernetwork.us/@venivv'},
+            {credName: 'u/Anon_0365Admin', credUrl: 'https://www.reddit.com/user/Anon_0365Admin'},
+        ],
         registrationStatus: 'BY_INVITE',
         registrationLink: 'https://s.thecybernetwork.us/invite/Fjwriv6R',
         implementation: 'Mastodon',

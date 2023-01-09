@@ -4,6 +4,7 @@ import { PopupService } from 'src/app/utilities/popup.service';
 import { federatedServerList } from './federated-server-list';
 import { FederatedServer } from './federated-server.interface';
 import { faExclamationTriangle, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { faExclamationTriangle, IconDefinition } from '@fortawesome/free-solid-s
 })
 export class FederatedServerListComponent implements OnInit {
 
-  constructor(private screenService: ScreenSizeService, private popupService: PopupService) { }
+  constructor(private screenService: ScreenSizeService, private popupService: PopupService, private router: Router) { }
 
   private _isMobile: boolean = false;
   private _emailDisclaimerIsExpanded: boolean = false;
@@ -71,6 +72,10 @@ export class FederatedServerListComponent implements OnInit {
   }
   public onClickDrsDisclaimer(){
     this._drsDisclaimerIsExpanded = !this._drsDisclaimerIsExpanded;
+  }
+
+  onClickLink(url: string){
+    window.open(url, '_blank');
   }
 
 }

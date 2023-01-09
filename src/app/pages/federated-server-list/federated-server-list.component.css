@@ -130,3 +130,14 @@ td {
     align-items:flex-start;
     margin-bottom: 15px;
 }
+.explore-local{
+    padding: 10px;
+    background-color: rgb(219, 219, 219);
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 10px;
+}
+.explore-local:hover{
+    border: 1px solid var(--color-special);
+    cursor: pointer;
+    background-color: rgb(243, 243, 243);
+}
