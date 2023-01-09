@@ -7,12 +7,7 @@ import { ScreenSizeService } from 'src/app/utilities/screen-size/screen-size.ser
   styleUrls: ['./run-your-own.component.css']
 })
 export class RunYourOwnComponent implements OnInit {
-
   constructor(private sizeService: ScreenSizeService) { }
-
-  public get isMobile(): boolean { return this.sizeService.isSmallSize;}
-
   ngOnInit(): void {
   }
-
 }

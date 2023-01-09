@@ -1,0 +1,48 @@
+import { ProviderDetails } from "./provider-details.interface";
+
+export const providersList: ProviderDetails[] = [
+    {
+        name: 'toot.io', 
+        fullUrl: 'https://toot.io/mastodon_hosting.html',
+        priceFrom: '$29 USD',
+        priceUrl: 'https://toot.io/mastodon_hosting.html#pricing',
+        basedLocation: 'Hebertshausen, Germany',
+        basedUrl: 'https://toot.io/mastodon_terms.html',
+        suggestedUserCount: 100,
+        hostingLocations: 'USA, Germany, Finland',
+        isAvailable: true,
+    },
+    {
+        name: 'IKNOX', 
+        fullUrl: 'https://iknox.com/products/mastodon-hosting',
+        priceFrom: '$19 USD',
+        priceUrl: 'https://iknox.com/products/mastodon-hosting',
+        basedLocation: 'Sydney, Australia',
+        basedUrl: 'https://iknox.com/about',
+        suggestedUserCount: 150,
+        hostingLocations: 'USA, Europe, Middle East, Asia - Singapore, Asia - Japan, Australia',
+        isAvailable: true,
+    },
+    {
+        name: 'Cloudplane', 
+        fullUrl: 'https://cloudplane.org/pricing',
+        priceFrom: '€3',
+        priceUrl: 'https://cloudplane.org/pricing',
+        basedLocation: 'Zwiefalten, Germany',
+        basedUrl: 'https://cloudplane.org/privacy',
+        suggestedUserCount: 1,
+        hostingLocations: 'France',
+        isAvailable: true,
+    },
+    {
+        name: 'mastohost', 
+        fullUrl: 'https://masto.host/',
+        priceFrom: '$6 USD',
+        priceUrl: 'https://masto.host/pricing/',
+        basedLocation: 'Leiria, Portugal',
+        basedUrl: 'https://www.dnb.com/business-directory/company-profiles.wap_-_web_access_platforms_unipessoal_lda.4e5c9b1f9610af43ebf08448590c5948.html',
+        suggestedUserCount: 5,
+        hostingLocations: 'France',
+        isAvailable: false,
+    },
+];

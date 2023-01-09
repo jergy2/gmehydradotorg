@@ -1,0 +1,34 @@
+<div class="providers-root">
+    <div class="generic-title">
+        Mastodon Hosting Providers
+    </div>
+    <p>
+        For reasonable pricing, let somebody else do the technical setup and maintenance of a Mastodon server while
+        retaining full administrative authority over your instance.
+    </p>
+    <div *ngFor="let provider of providers" class="providers-container">
+        <div class="provider" [ngClass]="{'provider-disabled': !provider.isAvailable}">
+            <div class="provider-title">{{ provider.name }} </div>
+            <div class="provider-link">
+                <a [href]="provider.fullUrl" target="_blank">{{ provider.fullUrl}}</a>
+            </div>
+            <div style="font-size: 0.9em;">
+                Pricing from <a [href]="provider.priceUrl" target="_blank">{{ provider.priceFrom }}</a>
+            </div>
+            <div style="font-size: 0.9em;">Suggested users: {{ provider.suggestedUserCount}} </div>
+            <div style="font-size: 0.9em;">
+                Based in
+                <a [href]="provider.basedUrl" target="_blank">
+                    {{ provider.basedLocation }}
+                </a>
+            </div>
+            <div style="font-size: 0.9em;">
+                Hosting locations:
+                {{ provider.hostingLocations }}
+            </div>
+            <div style="display:flex;flex-direction:row-reverse; font-size:0.8em;padding: 5px;" *ngIf="!provider.isAvailable">
+                Currently unavailable
+            </div>
+        </div>
+    </div>
+</div>

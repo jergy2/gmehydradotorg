@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ServerFormComponent } from './pages/federated-server-list/grow-hydra/server-form/server-form.component';
 import { ConfirmApplicationComponent } from './pages/federated-server-list/grow-hydra/confirm-application/confirm-application.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MastodonProvidersComponent } from './pages/run-your-own/mastodon-providers/mastodon-providers.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     WelcomeComponent,
     GrowHydraComponent,
     ServerFormComponent,
-    ConfirmApplicationComponent
+    ConfirmApplicationComponent,
+    MastodonProvidersComponent
   ],
   imports: [
     BrowserModule,

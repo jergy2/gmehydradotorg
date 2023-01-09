@@ -19,14 +19,10 @@
         </p>
         <div>
             <p>
-
                 <a href="https://docs.joinmastodon.org/user/run-your-own/"
                     target="_blank">https://docs.joinmastodon.org/user/run-your-own/</a><br>
                 Why would you want to run your own Mastodon server?
-
             </p>
-
-
             <div>
                 <p class="content-item">
                     Absolute control over your own voice on the web, not subject to anyone else’s rules or whims.
@@ -47,102 +43,7 @@
             </div>
         </div>
         <div>
-            <div class="generic-title">
-                Mastodon Hosting Providers
-            </div>
-            <p>
-                For reasonable pricing, let somebody else do the technical setup and maintenance of a Mastodon server while retaining full administrative authority over your instance.
-            </p>
-            <div *ngIf="isMobile">Table not shown</div>
-            <table class="providers-table" *ngIf="!isMobile">
-                <tr style="border-bottom:1px solid rgb(44, 44, 44);">
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Provider</td>
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Price / month from</td>
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Based in</td>
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Suggested Active users</td>
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Hosting locations</td>
-                    <td style="border-bottom:1px solid rgb(44, 44, 44);">Available?</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://toot.io/mastodon_hosting.html" target="_blank">toot.io</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://toot.io/mastodon_hosting.html#pricing" target="_blank">$29 USD</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://toot.io/mastodon_terms.html" target="_blank">Hebertshausen, Germany</a>
-                    </td>
-                    <td>100</td>
-                    <td>
-                        USA, Germany, Finland
-                    </td>
-                    <td>Available</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://iknox.com/products/mastodon-hosting" target="_blank">IKNOX</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://iknox.com/products/mastodon-hosting" target="_blank">$19 USD</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://iknox.com/about" target="_blank">Sydney Australia</a>
-                    </td>
-                    <td>150</td>
-                    <td>
-                        USA, Europe, Middle East, Asia - Singapore, Asia - Japan, Australia
-                    </td>
-                    <td>Available</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://masto.host/pricing/" target="_blank">mastohost</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://masto.host/pricing/" target="_blank">$6 USD</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://www.dnb.com/business-directory/company-profiles.wap_-_web_access_platforms_unipessoal_lda.4e5c9b1f9610af43ebf08448590c5948.html" target="_blank">Leiria, Portugal</a>
-                    </td>
-                    <td>5</td>
-                    <td>
-                        France
-                    </td>
-                    <td>Not available</td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://cloudplane.org/pricing" target="_blank">Cloudplane</a>
-                    </td>
-                    <td>
-                        <a href="https://cloudplane.org/pricing" target="_blank">€3</a>
-                        
-                        
-                    </td>
-                    <td>
-                        <a href="https://cloudplane.org/privacy" target="_blank">Zwiefalten, Germany</a>
-                    </td>
-                    <td>1</td>
-                    <td>
-                        <a href="https://datacenter.scaleway.com/">France</a>
-                    </td>
-                    <td>Available</td>
-                    
-                </tr>
-            </table>
+            <app-mastodon-providers></app-mastodon-providers>
         </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ export const resourceList: ResourceItem[] = [
     {
         title: 'Naked Short and Greedy',
         fullUrl: 'https://www.goodreads.com/book/show/49089890-naked-short-and-greedy',
-        displayUrl: 'https://www.goodreads.com/book/show/49089890-naked-short-and-greedy',
+        displayUrl: 'Goodreads',
         description: 'Book written by Dr. Susanne Trimbath',
     },
     {
