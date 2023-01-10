@@ -9,6 +9,7 @@ export interface FederatedServer{
     drsStatus: string;
     adminEmail: string;
     adminCreds: OperatorCredential[];
+    drsEvidenceLink: string;
     registrationStatus: 'OPEN' | 'BY_INVITE' | 'CLOSED';
     registrationLink: string;
     implementation: string;
@@ -17,4 +18,5 @@ export interface FederatedServer{
     serverDescription: string;
     exploreLink: string;
     aboutLink: string;
+    ownerIsExpanded: boolean;
 }

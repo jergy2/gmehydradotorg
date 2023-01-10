@@ -62,9 +62,9 @@
                 </div>
                 <div style="display:flex;flex-direction:row-reverse">
                     <div style="display:flex;flex-direction:column; font-size: 0.8em;text-align: right;">
-                        <div>Owner info</div>
-                        <div *ngFor="let cred of server.adminCreds">
-                            <a [href]="cred.credUrl" target="_blank">{{cred.credName}}</a>
+                        <div class="owner-info-title no-select" (click)="onClickOwner(server)">Owner info</div>
+                        <div *ngIf="server.ownerIsExpanded">
+                            <app-owner-info [info]="server"></app-owner-info>
                         </div>
                     </div>
 
@@ -73,17 +73,6 @@
                     style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
                     GME Hydra Head {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
                 </div>
-            </div>
-        </div>
-        <div class="disclaimer">
-            <div class="disclaimer-title no-select" (click)="onClickDrsDisclaimer()">
-                <div class="purple-circle"></div>
-                DRS'd Operators
-            </div>
-            <div *ngIf="drsDisclaimerIsExpanded">
-                <p>
-                    All servers in this list are owned and operated by DRS'd shareholders of GME.
-                </p>
             </div>
         </div>
         <div class="disclaimer">

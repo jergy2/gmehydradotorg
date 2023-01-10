@@ -63,6 +63,10 @@ export class FederatedServerListComponent implements OnInit {
     return '';
   }
 
+  public onClickOwner(server: FederatedServer){
+    server.ownerIsExpanded = !server.ownerIsExpanded;
+  }
+
   public onClickAddServer(){
     this._showGrowHydra = true;
   }

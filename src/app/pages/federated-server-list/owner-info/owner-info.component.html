@@ -1,0 +1,11 @@
+<div style="display:flex;flex-direction:column;">
+    <div *ngFor="let cred of info.adminCreds" style="display:flex;flex-direction:column;">
+        <a [href]="cred.credUrl" target="_blank">{{cred.credName}}</a>
+    </div>
+    <a [href]="info.drsEvidenceLink" class="drs-container" target="_blank">
+        
+        <div class="purple-circle"></div>
+    </a>
+
+
+</div>

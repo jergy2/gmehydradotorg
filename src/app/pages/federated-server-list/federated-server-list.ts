@@ -14,6 +14,7 @@ export const federatedServerList: FederatedServer[] = [
             {credName: '@jersan', credUrl: 'https://www.superstork.org/@jersan'},
             {credName: 'u/jersan', credUrl: 'https://www.reddit.com/user/jersan'},
         ],
+        drsEvidenceLink: 'https://www.reddit.com/user/jersan/comments/108bnm1/xxxx_booked/',
         registrationStatus: 'OPEN',
         registrationLink: '',
         implementation: 'Mastodon',
@@ -22,6 +23,7 @@ export const federatedServerList: FederatedServer[] = [
         serverDescription: 'The superstork protects the nest. This is a place for theoretical discussions about business and stocks - specifically GameStop stock ($GME). Opinions and memes welcome.',
         exploreLink: 'https://www.superstork.org/public/local',
         aboutLink: 'https://www.superstork.org/about',
+        ownerIsExpanded: false,
     },
     {
         name: 'The Cyber Network',
@@ -35,6 +37,7 @@ export const federatedServerList: FederatedServer[] = [
             {credName: '@venivv', credUrl: 'https://s.thecybernetwork.us/@venivv'},
             {credName: 'u/Anon_0365Admin', credUrl: 'https://www.reddit.com/user/Anon_0365Admin'},
         ],
+        drsEvidenceLink: 'https://www.reddit.com/r/Superstonk/comments/xvr1bl/moving_this_over_from_gmeorphans/',
         registrationStatus: 'BY_INVITE',
         registrationLink: 'https://s.thecybernetwork.us/invite/Fjwriv6R',
         implementation: 'Mastodon',
@@ -43,5 +46,6 @@ export const federatedServerList: FederatedServer[] = [
         serverDescription: 'A place for those of us that want to be a part of a decentralized future. We are gamers, techs, drone pilots, and a multitude of other hobbyists.',
         exploreLink: 'https://s.thecybernetwork.us/public/local',
         aboutLink: 'https://s.thecybernetwork.us/about',
+        ownerIsExpanded: false,
     },
 ]

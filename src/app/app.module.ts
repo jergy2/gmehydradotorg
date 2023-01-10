@@ -25,6 +25,7 @@ import { ServerFormComponent } from './pages/federated-server-list/grow-hydra/se
 import { ConfirmApplicationComponent } from './pages/federated-server-list/grow-hydra/confirm-application/confirm-application.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MastodonProvidersComponent } from './pages/run-your-own/mastodon-providers/mastodon-providers.component';
+import { OwnerInfoComponent } from './pages/federated-server-list/owner-info/owner-info.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MastodonProvidersComponent } from './pages/run-your-own/mastodon-provid
     GrowHydraComponent,
     ServerFormComponent,
     ConfirmApplicationComponent,
-    MastodonProvidersComponent
+    MastodonProvidersComponent,
+    OwnerInfoComponent
   ],
   imports: [
     BrowserModule,
