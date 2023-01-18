@@ -2,6 +2,7 @@ import { OperatorCredential } from "./operator-credential.interface";
 
 export interface FederatedServer{
     name: string;
+    statusPositive: boolean;
     displayUrl: string;
     fullUrl: string; 
     userCount: number;

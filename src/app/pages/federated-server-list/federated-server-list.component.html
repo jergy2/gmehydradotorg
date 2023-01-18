@@ -23,7 +23,8 @@
 
                     </div>
                     <div>
-                        <div class="green-status"></div>
+                        <div class="green-status" *ngIf="server.statusPositive"></div>
+                        <div class="gray-status" *ngIf="!server.statusPositive"></div>
                     </div>
                 </div>
                 <div style="display:flex;flex-direction:row;justify-content: space-between;margin-bottom: 10px;" 
@@ -38,7 +39,7 @@
                     </div>
 
                     <div style="display:flex;flex-direction:column; min-width: 260px;padding: 10px;maring:10px;">
-                        <div style="font-size: 0.8em;">{{ userCount(server.userCount) }} users </div>
+                        <!-- <div style="font-size: 0.8em;">{{ userCount(server.userCount) }} users </div> -->
                         <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{
                             server.serverLocation
                             }} </div>
@@ -71,7 +72,7 @@
                 </div>
                 <div
                     style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
-                    GME Hydra Head {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
+                    Server {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
                 </div>
             </div>
         </div>

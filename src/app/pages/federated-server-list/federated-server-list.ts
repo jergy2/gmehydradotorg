@@ -4,6 +4,7 @@ import { FederatedServer } from "./federated-server.interface";
 export const federatedServerList: FederatedServer[] = [
     {
         name: 'Superstork',
+        statusPositive: true,
         displayUrl: 'www.superstork.org',
         fullUrl: 'https://www.superstork.org',
         userCount: 150,
@@ -27,6 +28,7 @@ export const federatedServerList: FederatedServer[] = [
     },
     {
         name: 'The Cyber Network',
+        statusPositive: false,
         displayUrl: 's.thecybernetwork.us',
         fullUrl: 'https://s.thecybernetwork.us',
         userCount: 3,

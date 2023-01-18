@@ -12,6 +12,7 @@ export class OwnerInfoComponent implements OnInit {
   
   private _info: FederatedServer = {
     name: '',
+    statusPositive: false,
     displayUrl: '',
     fullUrl: '',
     userCount: 0,
