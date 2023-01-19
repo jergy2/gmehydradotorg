@@ -28,7 +28,7 @@ export const federatedServerList: FederatedServer[] = [
     },
     {
         name: 'The Cyber Network',
-        statusPositive: false,
+        statusPositive: true,
         displayUrl: 's.thecybernetwork.us',
         fullUrl: 'https://s.thecybernetwork.us',
         userCount: 3,
