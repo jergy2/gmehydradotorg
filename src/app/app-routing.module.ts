@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
-import { CommunitiesComponent } from './pages/communities/communities.component';
 import { DrsComponent } from './pages/drs/drs.component';
 import { FederatedServerListComponent } from './pages/federated-server-list/federated-server-list.component';
 import { FediverseComponent } from './pages/fediverse/fediverse.component';
@@ -19,7 +18,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'run-your-own', component: RunYourOwnComponent },
   { path: 'resources', component: ResourcesComponent },
-  { path: 'communities', component: CommunitiesComponent },
   { path: 'timeline', component: TimelineComponent },
   { path: 'direct-registration-system', component: DrsComponent },
   { path: 'fediverse', component: FediverseComponent },

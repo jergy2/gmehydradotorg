@@ -17,5 +17,5 @@ export class WelcomeComponent implements OnInit {
   }
 
   public get serverCount(): number { return 2; }
-  public onClickHeadCount() { this.router.navigate(['/server-list']); }
+  public onClickHydra() { this.router.navigate(['/server-list']); }
 }

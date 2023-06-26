@@ -7,12 +7,12 @@
         <p>
             The Direct Registration System aka DRS is a foundational component of the financial revolution that is
             currently
-            happening among legitimate investors of GameStop.
+            happening among investors of GameStop.
         </p>
-        <p>
+        <!-- <p>
             DRS is the solution to the <span [routerLink]="['/systemic-problems']" class="link">systemic
                 problems</span>.
-        </p>
+        </p> -->
         <iframe *ngIf="isLarge"
             style="width:100%;min-height:340px;border-radius: 10px;background-color:white;margin-top:10px;border: 1px solid gray;"
             src="https://www.youtube.com/embed/gNTClU6lLqY" title="YouTube video player" frameborder="0"
@@ -39,7 +39,7 @@
         <div class="table-container">
 
             <div style="width:100%;display:flex;">
-                <div class="generic-title">DRS Comparison</div>
+                <div class="generic-title">Basic DRS Comparison</div>
             </div>
             <p>Holding shares of a company through DRS versus holding shares of a company with a brokerage account
                 <!-- Click a row to expand for more information. -->
@@ -79,16 +79,46 @@
 </div>
 <div class="generic-container">
     <div class="generic-inner-container shadow">
-        <iframe style="border-radius:12px"
+
+        <!-- <iframe *ngIf="isLarge"
+        style="width:100%;min-height:340px;border-radius: 10px;background-color:white;margin-top:10px;border: 1px solid gray;"
+        src=" https://www.youtube.com/watch?v=1tifiNKLCgI" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    <iframe *ngIf="!isLarge"
+        style="width:100%;min-height:250px; max-height:400px;border-radius: 10px;background-color:white;margin-top:10px;"
+        src=" https://www.youtube.com/watch?v=1tifiNKLCgI" title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe> -->
+
+        <iframe 
+            *ngIf="isLarge"
+            style="width:100%;min-height:340px;border-radius: 10px;background-color:white;margin-top:10px;border: 1px solid gray;"
+            src="https://www.youtube.com/embed/1tifiNKLCgI" 
+            title="DRS - WOOCH"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+            <iframe 
+            *ngIf="!isLarge"
+            style="width:100%;min-height:250px; max-height:400px;border-radius: 10px;background-color:white;margin-top:10px;"
+            src="https://www.youtube.com/embed/1tifiNKLCgI" 
+            title="DRS - WOOCH"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+        <!-- <iframe style="border-radius:12px"
             src="https://open.spotify.com/embed/track/44pfWLrktQTf2cFSn7Gmng?utm_source=generator" width="100%"
             height="152" frameBorder="0" allowfullscreen=""
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe> -->
 
         <div class="lyrics-container" *ngIf="showLyrics">
             <app-drs-lyrics></app-drs-lyrics>
         </div>
         <div style="display:flex;flex-direction:row-reverse">
-            <button class="bttn bttn.primary button" (click)="onClickShowLyrics()" style="margin-top:3px;margin-bottom:3px;">
+            <button class="bttn bttn.primary button" (click)="onClickShowLyrics()"
+                style="margin-top:3px;margin-bottom:3px;">
                 <div *ngIf="showLyrics">
                     Hide lyrics
                 </div>

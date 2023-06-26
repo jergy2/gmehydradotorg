@@ -8,6 +8,12 @@ export const resourceList: ResourceItem[] = [
         description: 'Book written by Dr. Susanne Trimbath',
     },
     {
+        title: 'WhyDRS.org',
+        fullUrl: 'https://www.whydrs.org',
+        displayUrl: 'www.whydrs.org',
+        description: 'Information website produced by GameStop investors to provide information about the fundamentally important Direct Registration System',
+    },
+    {
         title: 'DRSGME.org',
         fullUrl: 'https://www.drsgme.org',
         displayUrl: 'www.drsgme.org',

@@ -30,20 +30,19 @@
         </div>
         <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
             <label for="location" class="form-label">Server location: </label>
-            <input id="location" type="text" class="form-input" formControlName="location" placeholder="City, Country">
+            <input id="location" type="text" class="form-input" formControlName="location" placeholder="e.g. City, Country (optional)">
         </div>
         <div class="form-row" [ngClass]="{'form-row-mobile': isMobile}">
             <label for="comment" class="form-label">Comments: </label>
             <input id="comment" type="text" class="form-input" formControlName="comment"
-                placeholder="Add any other information">
+                placeholder="Add any other information (optional)">
         </div>
     </div>
     <div style="width: 100%;border-bottom: 1px solid gray;margin-top: 20px; margin-bottom: 10px;"></div>
     <div>
         <div style="color: var(--color-special);margin-bottom: 10px;">DRS Agreement: </div>
         <div style="padding: 10px; background-color: rgb(240, 240, 240); border-radius: 10px;">
-            The server specified by the above information is owned and operated by a DRS'd shareholder of GME.
-            This server is a place where DRS and related topics of conversation will be welcomed and encouraged.
+            The server specified by the above information is a place where DRS and related topics of conversation will be welcomed and encouraged.
         </div>
         <p>The above statement is true <input type="checkbox" id="drs" name="drs"
                 (change)="drsCheckCheckBoxvalue($event.target)" [checked]="drsIsChecked"> </p>

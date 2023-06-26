@@ -129,6 +129,9 @@ td {
     cursor: pointer;
     font-weight: 500;
 }
+.owner-info-title{
+    color: gray;
+}
 
 
 .server-item-container {

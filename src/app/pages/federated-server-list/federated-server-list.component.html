@@ -1,15 +1,8 @@
 <div class="generic-container" style="width:100%;flex-grow: 2;">
     <div class="generic-inner-container shadow" style="width:100%;flex-grow: 2;">
         <div class="generic-title">
-            GME Hydra Fediverse Server List
+            Fediverse Server List
         </div>
-        <p>
-            Join GME Hydra by becoming a member of any of the fediverse servers listed. </p>
-        <p>
-            By signing up for an account on any of the following servers, you will be joining the community of millions
-            of other people that are already part of the <a [routerLink]="['/fediverse']">fediverse</a>.
-        </p>
-        <p>You can change which server your account is on at any time.</p>
         <div style="width:100%;display:flex;flex-direction:column;">
             <div *ngFor="let server of serverList" class="server-item-container">
                 <div class="server-item-top-row">
@@ -23,12 +16,12 @@
 
                     </div>
                     <div>
-                        <div class="green-status" *ngIf="server.statusPositive"></div>
-                        <div class="gray-status" *ngIf="!server.statusPositive"></div>
+                        <!-- <div class="green-status" *ngIf="server.statusPositive"></div>
+                        <div class="gray-status" *ngIf="!server.statusPositive"></div> -->
                     </div>
                 </div>
-                <div style="display:flex;flex-direction:row;justify-content: space-between;margin-bottom: 10px;" 
-                [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
+                <div style="display:flex;flex-direction:row;justify-content: space-between;margin-bottom: 10px;"
+                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
                                  'align-items': isLargeScreen ? '': 'center' }">
 
                     <div style="width:100%;display:flex;align-items: center;margin: 10px;"
@@ -44,18 +37,10 @@
                             server.serverLocation
                             }} </div>
                         <div style="font-size: 0.8em;">Fediverse software: {{ server.implementation }} </div>
-                        <div class="explore-local no-select" style="margin-top:10px;margin-bottom:10px;" (click)="onClickLink(server.exploreLink)">
+                        <!-- <div class="explore-local no-select" style="margin-top:10px;margin-bottom:10px;"
+                            (click)="onClickLink(server.exploreLink)">
                             See what's happening locally on {{ server.name }}
-                        </div>
-                        <div style="margin-top: 10px;display:flex;flex-direction: row; margin-bottom: 10px;;">
-                            <div *ngIf="server.registrationStatus === 'BY_INVITE'">
-                                Registration: <a class="server-link" [attr.href]="server.registrationLink"
-                                    target="_blank"> By invite</a>
-                            </div>
-                            <div *ngIf="server.registrationStatus !== 'BY_INVITE'">
-                                Registration: {{ registrationStatus(server) }}
-                            </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div>
@@ -70,10 +55,10 @@
                     </div>
 
                 </div>
-                <div
+                <!-- <div
                     style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
                     Server {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="disclaimer">
@@ -85,7 +70,7 @@
             </div>
             <div *ngIf="emailDisclaimerIsExpanded">
                 <p>
-                    An email address is required to sign up for an account on Mastodon instances and other fediverse
+                    An email address is required to sign up for an account on Mastodon instances and most other fediverse
                     instances.
                 </p>
                 <p>
@@ -99,14 +84,29 @@
         </div>
     </div>
 </div>
+
 <div class="generic-container">
     <div class="generic-inner-container shadow">
-        <div class="generic-title">Grow GME Hydra</div>
+        <div class="generic-title">Join a different fediverse server</div>
+        <p>If you want to participate with this community without creating an account on one of the servers listed here,
+            you can create an account on any other open fediverse server instance.
+        </p>
+        <div style="font-size: 1.1em;">
+            <a href="https://join-lemmy.org/instances" target="_blank">Lemmy Servers</a>
+        </div>
+        <div style="font-size: 1.1em;"><a href="https://joinmastodon.org/servers" target="_blank">Mastodon Servers</a>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="generic-container">
+    <div class="generic-inner-container shadow">
+        <div class="generic-title">Add your server</div>
         <div>
             <p>
-                Grow GME Hydra by starting your own fediverse server and adding it to this list.
-                The more that GME Hydra grows, the more powerful and more resistant to censorship this community
-                becomes.
+                Start your own server or add your existing server to this list.
             </p>
             <button *ngIf="!showGrowHydra" class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the
                 list</button>
@@ -114,15 +114,5 @@
         <div>
             <app-grow-hydra *ngIf="showGrowHydra"></app-grow-hydra>
         </div>
-    </div>
-</div>
-<div class="generic-container">
-    <div class="generic-inner-container shadow">
-        <div class="generic-title">Join a Different Fediverse Server</div>
-        <p>If you want to join the fediverse without creating an account on one of the GME Hydra servers, you can sign
-            up on any open server on the Mastodon public server list or instances of other fediverse software projects.
-        </p>
-        <p style="font-size: 1.1em;"><a href="https://joinmastodon.org/servers" target="_blank">Servers - Mastodon</a>
-        </p>
     </div>
 </div>

@@ -8,7 +8,6 @@ import { SidebarComponent } from './nav/sidebar/sidebar.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { FederatedServerListComponent } from './pages/federated-server-list/federated-server-list.component';
 import { AddServerPopupComponent } from './pages/federated-server-list/add-server-popup/add-server-popup.component';
-import { CommunitiesComponent } from './pages/communities/communities.component';
 import { DrsComponent } from './pages/drs/drs.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { FediverseComponent } from './pages/fediverse/fediverse.component';
@@ -35,7 +34,6 @@ import { OwnerInfoComponent } from './pages/federated-server-list/owner-info/own
     AboutComponent,
     SidebarComponent,
     ResourcesComponent,
-    CommunitiesComponent,
     DrsComponent,
     TimelineComponent,
     FediverseComponent,
