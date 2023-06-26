@@ -3,6 +3,27 @@ import { FederatedServer } from "./federated-server.interface";
 
 export const federatedServerList: FederatedServer[] = [
     {
+        name: 'DRSGME/WhyDRS Lemmy',
+        statusPositive: true,
+        displayUrl: 'https://lemmy.whynotdrs.org/',
+        fullUrl: 'https://lemmy.whynotdrs.org/',
+        userCount: 50,
+        serverStatus: '',
+        drsStatus: '',
+        adminEmail: '',
+        adminCreds: [],
+        drsEvidenceLink: '',
+        registrationStatus: 'OPEN',
+        registrationLink: '',
+        implementation: 'Lemmy',
+        serverLocation: '',
+        thumbnailFile: 'assets/drsgmewhydrs-thumb.png',
+        serverDescription: '',
+        exploreLink: 'https://lemmy.whynotdrs.org/',
+        aboutLink: 'https://lemmy.whynotdrs.org/',
+        ownerIsExpanded: false,
+    },
+    {
         name: 'Superstork',
         statusPositive: true,
         displayUrl: 'www.superstork.org',
