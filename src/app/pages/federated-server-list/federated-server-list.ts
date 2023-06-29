@@ -5,13 +5,15 @@ export const federatedServerList: FederatedServer[] = [
     {
         name: 'DRSGME/WhyDRS Lemmy',
         statusPositive: true,
-        displayUrl: 'https://lemmy.whynotdrs.org/',
+        displayUrl: 'lemmy.whynotdrs.org',
         fullUrl: 'https://lemmy.whynotdrs.org/',
         userCount: 50,
         serverStatus: '',
         drsStatus: '',
         adminEmail: '',
-        adminCreds: [],
+        adminCreds: [
+            {credName: 'DRSGME.org team', credUrl: 'https://www.drsgme.org'},
+        ],
         drsEvidenceLink: '',
         registrationStatus: 'OPEN',
         registrationLink: '',

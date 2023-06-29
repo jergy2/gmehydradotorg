@@ -15,32 +15,28 @@
                         </div>
 
                     </div>
-                    <div>
-                        <!-- <div class="green-status" *ngIf="server.statusPositive"></div>
-                        <div class="gray-status" *ngIf="!server.statusPositive"></div> -->
-                    </div>
                 </div>
                 <div style="display:flex;flex-direction:row;justify-content: space-between;margin-bottom: 10px;"
                     [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
                                  'align-items': isLargeScreen ? '': 'center' }">
-
                     <div style="width:100%;display:flex;align-items: center;margin: 10px;"
                         [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row-reverse': 'column' }">
                         <a [href]="server.aboutLink" target="_blank">
                             <img [src]="server.thumbnailFile" style="border-radius: 10px;"
                                 [ngStyle]="{ 'max-width': isLargeScreen ? '425px': '275px' }"></a>
                     </div>
-
                     <div style="display:flex;flex-direction:column; min-width: 260px;padding: 10px;maring:10px;">
-                        <!-- <div style="font-size: 0.8em;">{{ userCount(server.userCount) }} users </div> -->
-                        <div style="font-size: 0.8em;" *ngIf="server.serverLocation">Server location: {{
-                            server.serverLocation
-                            }} </div>
-                        <div style="font-size: 0.8em;">Fediverse software: {{ server.implementation }} </div>
-                        <!-- <div class="explore-local no-select" style="margin-top:10px;margin-bottom:10px;"
-                            (click)="onClickLink(server.exploreLink)">
-                            See what's happening locally on {{ server.name }}
-                        </div> -->
+                        <div style="font-size: 0.8em; display:flex;flex-direction: row; align-items: center;">
+                            Fediverse software:
+                            <img *ngIf="server.implementation === 'Lemmy'" src="assets/lemmy-icon.png" alt="Lemmy"
+                                style="width:25px;height:25px;margin-left: 10px;">
+                            <img *ngIf="server.implementation === 'Mastodon'" src="assets/mastodon-icon.png"
+                                alt="Mastodon" style="width:25px;height:25px;margin-left: 10px;">
+                            <span style="margin-left: 5px;">{{ server.implementation }}</span>
+                        </div>
+                        <div style="font-size: 0.8em;" *ngIf="server.serverLocation">
+                            Server location: {{ server.serverLocation }}
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -70,7 +66,8 @@
             </div>
             <div *ngIf="emailDisclaimerIsExpanded">
                 <p>
-                    An email address is required to sign up for an account on Mastodon instances and most other fediverse
+                    An email address is required to sign up for an account on Mastodon instances and most other
+                    fediverse
                     instances.
                 </p>
                 <p>
