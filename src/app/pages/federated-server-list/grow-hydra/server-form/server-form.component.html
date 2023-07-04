@@ -42,7 +42,7 @@
     <div>
         <div style="color: var(--color-special);margin-bottom: 10px;">DRS Agreement: </div>
         <div style="padding: 10px; background-color: rgb(240, 240, 240); border-radius: 10px;">
-            The server specified by the above information is a place where DRS and related topics of conversation will be welcomed and encouraged.
+            The server specified by the above information is a place where <span [routerLink]="['/direct-registration-system']" class="link">DRS</span> and related topics of conversation will be welcomed and encouraged.
         </div>
         <p>The above statement is true <input type="checkbox" id="drs" name="drs"
                 (change)="drsCheckCheckBoxvalue($event.target)" [checked]="drsIsChecked"> </p>

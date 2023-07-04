@@ -49,3 +49,10 @@
     border-radius: 25px;
     border: 8px solid var(--color-special);
 }
+.link{
+    color: var(--color-special);
+}
+.link:hover{
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -1,4 +1,5 @@
 export interface ProviderDetails{
+    appName: 'Mastodon' | 'Lemmy';
     name: string;
     fullUrl: string;
     priceFrom: string;

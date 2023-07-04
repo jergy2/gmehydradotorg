@@ -2,9 +2,34 @@ import { ProviderDetails } from "./provider-details.interface";
 
 export const providersList: ProviderDetails[] = [
     {
+        appName: 'Lemmy',
+        name: 'Elestio', 
+        fullUrl: 'https://elest.io/open-source/lemmy',
+        priceFrom: '$10',
+        priceUrl: 'https://elest.io/pricing',
+        basedLocation: 'Dublin, Ireland',
+        basedUrl: 'https://elest.io/about',
+        suggestedUserCount: 0,
+        hostingLocations: 'USA, Germany, Finland',
+        isAvailable: true,
+    },
+    {
+        appName: 'Mastodon',
+        name: 'Elestio', 
+        fullUrl: 'https://elest.io/open-source/mastodon',
+        priceFrom: '$10',
+        priceUrl: 'https://elest.io/pricing',
+        basedLocation: 'Dublin, Ireland',
+        basedUrl: 'https://elest.io/about',
+        suggestedUserCount: 0,
+        hostingLocations: 'USA, Germany, Finland',
+        isAvailable: true,
+    },
+    {
+        appName: 'Mastodon',
         name: 'Cloudplane', 
         fullUrl: 'https://cloudplane.org/pricing',
-        priceFrom: '€3',
+        priceFrom: '€6',
         priceUrl: 'https://cloudplane.org/pricing',
         basedLocation: 'Zwiefalten, Germany',
         basedUrl: 'https://cloudplane.org/privacy',
@@ -13,6 +38,7 @@ export const providersList: ProviderDetails[] = [
         isAvailable: true,
     },
     {
+        appName: 'Mastodon',
         name: 'IKNOX', 
         fullUrl: 'https://iknox.com/products/mastodon-hosting',
         priceFrom: '$19 USD',
@@ -24,6 +50,7 @@ export const providersList: ProviderDetails[] = [
         isAvailable: true,
     },
     {
+        appName: 'Mastodon',
         name: 'mastohost', 
         fullUrl: 'https://masto.host/',
         priceFrom: '$6 USD',
@@ -35,9 +62,10 @@ export const providersList: ProviderDetails[] = [
         isAvailable: true,
     },
     {
+        appName: 'Mastodon',
         name: 'toot.io', 
         fullUrl: 'https://toot.io/mastodon_hosting.html',
-        priceFrom: '$29 USD',
+        priceFrom: '$24 USD',
         priceUrl: 'https://toot.io/mastodon_hosting.html#pricing',
         basedLocation: 'Hebertshausen, Germany',
         basedUrl: 'https://toot.io/mastodon_terms.html',

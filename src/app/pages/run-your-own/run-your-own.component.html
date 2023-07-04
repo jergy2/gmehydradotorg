@@ -11,7 +11,9 @@
 
 <div class="generic-container">
     <div class="generic-inner-container shadow">
-        <div class="generic-title">Lemmy</div>
+        <div class="generic-title">Lemmy
+            <img src="assets/lemmy-icon.png" alt="Lemmy" style="width:25px;height:25px;margin-left: 10px;">
+        </div>
         <p>
             Lemmy is the fediverse app that best replicates the functionality of Reddit.
         </p>
@@ -20,11 +22,17 @@
                 Documentation</a>
 
         </p>
+        <div>
+            <app-dedicated-providers [appName]="'Lemmy'"></app-dedicated-providers>
+        </div>
     </div>
 </div>
 <div class="generic-container">
     <div class="generic-inner-container shadow">
-        <div class="generic-title">Mastodon</div>
+        <div class="generic-title">
+            Mastodon
+            <img src="assets/mastodon-icon.png" alt="Mastodon" style="width:25px;height:25px;margin-left: 10px;">
+        </div>
         <p>
             Mastodon is the fediverse app that best replicates the functionality of Twitter.
         </p>
@@ -55,7 +63,7 @@
             </ul>
         </div>
         <div>
-            <app-mastodon-providers></app-mastodon-providers>
+            <app-dedicated-providers [appName]="'Mastodon'"></app-dedicated-providers>
         </div>
     </div>
 </div>

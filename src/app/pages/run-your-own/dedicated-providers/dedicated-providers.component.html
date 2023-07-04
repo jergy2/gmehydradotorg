@@ -1,9 +1,9 @@
 <div class="providers-root">
     <div class="generic-title">
-        Mastodon Hosting Providers
+        Dedicated {{ appName }} Hosting Providers
     </div>
     <p>
-        For reasonable pricing, let somebody else do the technical setup and maintenance of a Mastodon server while
+        For reasonable pricing, let somebody else do the technical setup and maintenance of a {{ appName }} server while
         retaining full administrative authority over your instance.
     </p>
     <div *ngFor="let provider of providers" class="providers-container">
@@ -13,9 +13,9 @@
                 <a [href]="provider.fullUrl" target="_blank">{{ provider.fullUrl}}</a>
             </div>
             <div style="font-size: 0.9em;">
-                Pricing from <a [href]="provider.priceUrl" target="_blank">{{ provider.priceFrom }}</a>
+                Pricing from <a [href]="provider.priceUrl" target="_blank">{{ provider.priceFrom }} / month</a>
             </div>
-            <div style="font-size: 0.9em;">Suggested users: {{ provider.suggestedUserCount}} </div>
+            <div style="font-size: 0.9em;" *ngIf="provider.suggestedUserCount !== 0">Suggested users: {{ provider.suggestedUserCount}} </div>
             <div style="font-size: 0.9em;">
                 Based in
                 <a [href]="provider.basedUrl" target="_blank">

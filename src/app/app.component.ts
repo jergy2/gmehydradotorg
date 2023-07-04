@@ -32,6 +32,7 @@ export class AppComponent implements OnInit {
           this.router.navigate(['/welcome']);
         }
       }
+      document.body.scrollTop = 0;
     });
   }
 }

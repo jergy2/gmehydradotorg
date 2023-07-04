@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AddServerPopupComponent } from './add-server-popup.component';
+import { DedicatedProvidersComponent } from './dedicated-providers.component';
 
-describe('AddServerPopupComponent', () => {
-  let component: AddServerPopupComponent;
-  let fixture: ComponentFixture<AddServerPopupComponent>;
+describe('DedicatedProvidersComponent', () => {
+  let component: DedicatedProvidersComponent;
+  let fixture: ComponentFixture<DedicatedProvidersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddServerPopupComponent ]
+      declarations: [ DedicatedProvidersComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AddServerPopupComponent);
+    fixture = TestBed.createComponent(DedicatedProvidersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,8 @@
 <div class="generic-container" style="width:100%;flex-grow: 2;">
     <div class="generic-inner-container shadow" style="width:100%;flex-grow: 2;">
         <div class="generic-title">
-            Fediverse Server List
+            GME Hydra Fediverse Server List
+            <img src="assets/purple-hydra.png" alt="Hydra" style="width:25px;height:25px;margin-left: 10px;">
         </div>
         <div style="width:100%;display:flex;flex-direction:column;">
             <div *ngFor="let server of serverList" class="server-item-container">
@@ -72,7 +73,7 @@
                 </p>
                 <p>
                     If you do not want to use your primary email address in order to get an account in the fediverse,
-                    you can obtain a new email address for free from any of the many mail providers out there, for
+                    you can obtain a new email address for free from a variety of different email services, for
                     example <a href="https://proton.me/mail?ref=icnbtn" target="_blank">Proton Mail</a>.
                 </p>
             </div>
@@ -103,7 +104,7 @@
         <div class="generic-title">Add your server</div>
         <div>
             <p>
-                Start your own server or add your existing server to this list.
+                Increase the resiliency of the community of GameStop investors in the fediverse by adding your pro-GameStop server to this list.  The greater the number of servers the greater the degree of decentralization of the community.
             </p>
             <button *ngIf="!showGrowHydra" class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the
                 list</button>

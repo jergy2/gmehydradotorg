@@ -7,7 +7,6 @@ import { AboutComponent } from './pages/about/about.component';
 import { SidebarComponent } from './nav/sidebar/sidebar.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { FederatedServerListComponent } from './pages/federated-server-list/federated-server-list.component';
-import { AddServerPopupComponent } from './pages/federated-server-list/add-server-popup/add-server-popup.component';
 import { DrsComponent } from './pages/drs/drs.component';
 import { TimelineComponent } from './pages/timeline/timeline.component';
 import { FediverseComponent } from './pages/fediverse/fediverse.component';
@@ -23,14 +22,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ServerFormComponent } from './pages/federated-server-list/grow-hydra/server-form/server-form.component';
 import { ConfirmApplicationComponent } from './pages/federated-server-list/grow-hydra/confirm-application/confirm-application.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MastodonProvidersComponent } from './pages/run-your-own/mastodon-providers/mastodon-providers.component';
 import { OwnerInfoComponent } from './pages/federated-server-list/owner-info/owner-info.component';
+import { DedicatedProvidersComponent } from './pages/run-your-own/dedicated-providers/dedicated-providers.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FederatedServerListComponent,
-    AddServerPopupComponent,
     AboutComponent,
     SidebarComponent,
     ResourcesComponent,
@@ -46,8 +44,8 @@ import { OwnerInfoComponent } from './pages/federated-server-list/owner-info/own
     GrowHydraComponent,
     ServerFormComponent,
     ConfirmApplicationComponent,
-    MastodonProvidersComponent,
-    OwnerInfoComponent
+    OwnerInfoComponent,
+    DedicatedProvidersComponent
   ],
   imports: [
     BrowserModule,
