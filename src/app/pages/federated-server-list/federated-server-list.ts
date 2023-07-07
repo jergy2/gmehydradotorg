@@ -33,7 +33,7 @@ export const federatedServerList: FederatedServerInfo[] = [
     {
         name: 'Superstork',
         displayUrl: 'www.superstork.org',
-        fullUrl: 'https://www.superstork.org',
+        fullUrl: 'https://www.superstork.org/',
         adminEmail: 'superstork_admin@protonmail.com',
         adminCreds: [
             {credName: '@jersan', credUrl: 'https://www.superstork.org/@jersan'},
@@ -48,7 +48,7 @@ export const federatedServerList: FederatedServerInfo[] = [
     {
         name: 'The Cyber Network',
         displayUrl: 's.thecybernetwork.us',
-        fullUrl: 'https://s.thecybernetwork.us',
+        fullUrl: 'https://s.thecybernetwork.us/',
         adminEmail: 'contact@thecybernetwork.us',
         adminCreds: [
             {credName: '@venivv', credUrl: 'https://s.thecybernetwork.us/@venivv'},

@@ -2,58 +2,84 @@
     <div class="generic-inner-container shadow" style="width:100%;flex-grow: 2;">
         <div class="generic-title">
             GME Hydra Fediverse Server List
-            <img src="assets/purple-hydra.png" alt="Hydra" style="width:25px;height:25px;margin-left: 10px;">
+            <img src="assets/purple-hydra.png" alt="Hydra" style="width:22px;height:22px;margin-left: 10px;">
         </div>
 
-        <!-- <div>
-            asdf
-            <div *ngFor="let instance of instanceInfo">
-                <div>{{ instance.name }}</div>
-                <div>{{ instance.monthlyActiveUsers }} </div>
-            </div>
-
-        </div> -->
-
-
         <div style="width:100%;display:flex;flex-direction:column;">
-            <div *ngFor="let server of servers" class="server-item-container">
+            <div *ngFor="let server of servers" class="server-item-container shadow">
+
+
                 <div class="server-item-top-row">
                     <div style="display:flex;flex-direction:column">
-                        <div style="font-weight: bold;">
+                        <div class="server-name">
                             {{ server.name }}
                         </div>
                         <div>
                             <a [href]="server.fullUrl" target="_blank">{{server.displayUrl}}</a>
                         </div>
-
+                    </div>
+                    <div>
+                        <img *ngIf="server.implementation === 'Lemmy'" src="assets/lemmy-icon.png" alt="Lemmy"
+                            style="width:40px;height:40px;">
+                        <img *ngIf="server.implementation === 'Mastodon'" src="assets/mastodon-icon.png" alt="Mastodon"
+                            style="width:35px;height:35px;">
                     </div>
                 </div>
-                <div style="display:flex;flex-direction:row;justify-content: space-between;margin-bottom: 10px;"
-                    [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
+
+
+                <div class="server-content" [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column',
                                  'align-items': isLargeScreen ? '': 'center' }">
-                    <div style="width:100%;display:flex;align-items: center;margin: 10px;"
-                        [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
+
+                    <div style="display:flex;align-items: center;margin: 10px; width: 100%;"
+                        [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column', 'min-width': isLargeScreen ? '425px' : '100%'}">
                         <a [href]="server.fullUrl" target="_blank">
                             <img [src]="server.thumbnailFile" style="border-radius: 10px;"
-                                [ngStyle]="{ 'max-width': isLargeScreen ? '425px': '275px' }"></a>
+                                [ngStyle]="{ 'max-width': isLargeScreen ? '425px': '100%' }">
+
+                        </a>
                     </div>
-                    <div style="display:flex;flex-direction:column; min-width: 260px;padding: 10px;maring:10px;">
-                        <div style="font-size: 0.8em; display:flex;flex-direction: row; align-items: center;">
-                            Fediverse software:
-                            <img *ngIf="server.implementation === 'Lemmy'" src="assets/lemmy-icon.png" alt="Lemmy"
-                                style="width:25px;height:25px;margin-left: 10px;">
-                            <img *ngIf="server.implementation === 'Mastodon'" src="assets/mastodon-icon.png"
-                                alt="Mastodon" style="width:25px;height:25px;margin-left: 10px;">
-                            <span style="margin-left: 5px;">{{ server.implementation }}</span>
+
+
+                    <div style="display:flex;flex-direction:column; min-width: 260px; margin: 10px; width: 100%;"
+                        [ngStyle]="{ 'text-align': isLargeScreen ? 'right': 'left' }">
+                        <div style="font-size:1.0em; display:flex;flex-direction: row; align-items: center;">
+                            Monthly active users: 
+                            <div *ngIf="!server.dataRetrieved" style="margin-left: 3px; height: 18px; display:flex;flex-direction: row;align-items: center;">
+                                <div class="lds-ripple">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <span *ngIf="server.dataRetrieved" style="margin-left: 5px; font-weight: bold;">{{ server.monthlyActiveUsers }}</span>
                         </div>
-                        <div style="font-size: 0.8em;" *ngIf="server.serverLocation">
+                        <div style="font-size:0.9em;display:flex;flex-direction: row; align-items: center;">
+                            Software version:
+                            <span style="margin-left: 5px;">{{ server.implementation }}</span> 
+                            <span style="margin-left: 5px;">{{ server.softwareVersion }}</span>
+                        </div>
+                        <div style="font-size:0.9em;display:flex;flex-direction: row; align-items: center;" *ngIf="server.serverLocation">
                             Server location: {{ server.serverLocation }}
                         </div>
+                        <div style="font-size:0.9em; display:flex;flex-direction: row; align-items: center;">
+                            Registration: 
+                            <div *ngIf="!server.dataRetrieved" style="margin-left: 3px; height: 18px; display:flex;flex-direction: row;align-items: center;">
+                                <div class="lds-ripple">
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <span *ngIf="server.dataRetrieved" style="margin-left: 5px;">{{ server.registration }}</span>
+                        </div>
                     </div>
+
                 </div>
+
+
                 <div>
-                    <p style="font-size: 0.9em; color: rgb(26, 26, 26);">{{ server.serverDescription }}</p>
+                    <p style="font-size: 1.0em; color: rgb(26, 26, 26);">{{ server.serverDescription }}</p>
                 </div>
+
+
                 <div style="display:flex;flex-direction:row-reverse" *ngIf="server.adminCreds.length > 0">
                     <div style="display:flex;flex-direction:column; font-size: 0.8em;text-align: right;">
                         <div class="owner-info-title no-select" (click)="onClickOwner(server)">Owner info</div>
@@ -61,8 +87,9 @@
                             <app-owner-info [info]="server"></app-owner-info>
                         </div>
                     </div>
-
                 </div>
+
+
             </div>
         </div>
         <div class="disclaimer">
@@ -111,7 +138,9 @@
         <div class="generic-title">Add your server</div>
         <div>
             <p>
-                Increase the resiliency of the community of GameStop investors in the fediverse by adding your pro-GameStop server to this list.  The greater the number of servers the greater the degree of decentralization of the community.
+                Increase the resiliency of the community of GameStop investors in the fediverse by adding your
+                pro-GameStop server to this list. The greater the number of servers the greater the degree of
+                decentralization of the community.
             </p>
             <button *ngIf="!showGrowHydra" class="bttn bttn.primary" (click)="onClickAddServer()">Add your server to the
                 list</button>

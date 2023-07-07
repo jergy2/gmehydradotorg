@@ -34,17 +34,18 @@ export class InstancesService {
             isOnline: instanceInfo.isOnline,
           }
         });
-        console.log("Instance DTOS", instanceDtos);
+        // console.log("Instance DTOS", instanceDtos);
         this._instanceInfo$.next(instanceDtos);
         const end = dayjs();
-        console.log(end.diff(start, 'milliseconds'))
+        // console.log(end.diff(start, 'milliseconds'))
 
       }, 
       error: (error)=>{
-
+        console.log("Error getting instance info")
       },
       complete: ()=>{
         subject.complete();
+        this._instanceInfo$.complete();
       }
     });
     return subject.asObservable();

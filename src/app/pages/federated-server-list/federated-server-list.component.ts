@@ -45,7 +45,20 @@ export class FederatedServerListComponent implements OnInit {
 
   private _buildServers(){
     this._servers = this.serverList.map(item => new FederatedServer(item));
-    
+    this.instanceService.instanceInfo$.subscribe({
+      next: ()=>{},
+      error: ()=>{},
+      complete: ()=>{
+        const instanceInfo = this.instanceService.instanceInfo;
+        instanceInfo.forEach(instance =>{
+          this.servers.forEach(server =>{
+            if(instance.url === server.fullUrl){
+              server.addInstanceInfo(instance);
+            }
+          })
+        })
+      }
+    })
   }
 
   public registrationStatus(server: FederatedServerInfo): string{ 
