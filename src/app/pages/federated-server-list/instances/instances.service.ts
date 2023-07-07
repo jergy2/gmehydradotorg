@@ -29,6 +29,7 @@ export class InstancesService {
             name: instanceInfo.name,
             url :instanceInfo.url,
             registration: instanceInfo.registration,
+            description: instanceInfo.description,
             monthlyActiveUsers: instanceInfo.monthlyActiveUsers,
             softwareVersion: instanceInfo.softwareVersion,
             isOnline: instanceInfo.isOnline,

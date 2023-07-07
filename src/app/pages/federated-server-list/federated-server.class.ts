@@ -43,6 +43,9 @@ export class FederatedServer {
         }
         this._monthlyActiveUsers = instanceInfo.monthlyActiveUsers;
         this._softwareVersion = instanceInfo.softwareVersion;
+        if(instanceInfo.description){
+            this._serverDescription = instanceInfo.description;
+        }
         this._isOnline = instanceInfo.isOnline;
         this._dataRetrieved = true;
     }
