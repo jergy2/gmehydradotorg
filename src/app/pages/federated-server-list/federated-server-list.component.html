@@ -4,8 +4,19 @@
             GME Hydra Fediverse Server List
             <img src="assets/purple-hydra.png" alt="Hydra" style="width:25px;height:25px;margin-left: 10px;">
         </div>
+
+        <!-- <div>
+            asdf
+            <div *ngFor="let instance of instanceInfo">
+                <div>{{ instance.name }}</div>
+                <div>{{ instance.monthlyActiveUsers }} </div>
+            </div>
+
+        </div> -->
+
+
         <div style="width:100%;display:flex;flex-direction:column;">
-            <div *ngFor="let server of serverList" class="server-item-container">
+            <div *ngFor="let server of servers" class="server-item-container">
                 <div class="server-item-top-row">
                     <div style="display:flex;flex-direction:column">
                         <div style="font-weight: bold;">
@@ -22,7 +33,7 @@
                                  'align-items': isLargeScreen ? '': 'center' }">
                     <div style="width:100%;display:flex;align-items: center;margin: 10px;"
                         [ngStyle]="{ 'flex-direction': isLargeScreen ? 'row': 'column' }">
-                        <a [href]="server.aboutLink" target="_blank">
+                        <a [href]="server.fullUrl" target="_blank">
                             <img [src]="server.thumbnailFile" style="border-radius: 10px;"
                                 [ngStyle]="{ 'max-width': isLargeScreen ? '425px': '275px' }"></a>
                     </div>
@@ -52,10 +63,6 @@
                     </div>
 
                 </div>
-                <!-- <div
-                    style="display:flex;flex-direction:row-reverse;font-size: 0.7em; color: gray;padding: 3px;margin-top: 3px;">
-                    Server {{ serverList.indexOf(server)+1 }} of {{ serverList.length }}
-                </div> -->
             </div>
         </div>
         <div class="disclaimer">

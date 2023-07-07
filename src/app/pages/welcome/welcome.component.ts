@@ -14,6 +14,7 @@ export class WelcomeComponent implements OnInit {
   public get isMobile(): boolean { return this.screenService.isSmallSize; }
 
   ngOnInit(): void {
+
   }
 
   public get serverCount(): number { return 2; }

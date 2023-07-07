@@ -2,6 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import { PopupService } from './utilities/popup.service';
 import { ScreenSizeService } from './utilities/screen-size/screen-size.service';
 import { NavigationEnd, Router } from '@angular/router';
+import { InstancesService } from './pages/federated-server-list/instances/instances.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ export class AppComponent implements OnInit {
   constructor(
     private screenService: ScreenSizeService,
     private popupService: PopupService,
-    private router: Router
+    private router: Router,
+    private instanceService: InstancesService
   ) { }
 
   public get isLarge(): boolean { return this.screenService.isFullSize; }
@@ -26,6 +28,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.screenService.updateSize(window.innerWidth, window.innerHeight);
+    this.instanceService.initiate$();
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         if (event.url === '/') {

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ScreenSizeService } from 'src/app/utilities/screen-size/screen-size.service';
-import { PopupService } from 'src/app/utilities/popup.service';
 import { federatedServerList } from './federated-server-list';
-import { FederatedServer } from './federated-server.interface';
+import { FederatedServerInfo } from './federated-server-info.interface';
 import { faExclamationTriangle, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import { InstancesService } from './instances/instances.service';
+import { InstanceInfoDto } from './instances/instance-info-dto.interface';
+import { FederatedServer } from './federated-server.class';
 
 
 @Component({
@@ -14,57 +16,44 @@ import { Router } from '@angular/router';
 })
 export class FederatedServerListComponent implements OnInit {
 
-  constructor(private screenService: ScreenSizeService, private popupService: PopupService, private router: Router) { }
+  constructor(private screenService: ScreenSizeService, private instanceService: InstancesService) { }
 
   private _isMobile: boolean = false;
   private _emailDisclaimerIsExpanded: boolean = false;
   private _drsDisclaimerIsExpanded: boolean = false;
   private _showGrowHydra: boolean = false;
+  private _servers: FederatedServer[] = [];
 
   public get faExclamationTriangle(): IconDefinition { return faExclamationTriangle; }
-  public get serverList(): FederatedServer[] { return federatedServerList; }
+  public get serverList(): FederatedServerInfo[] { return federatedServerList; }
   public get screenIsMobile(): boolean { return this._isMobile; }
   public get emailDisclaimerIsExpanded(): boolean { return this._emailDisclaimerIsExpanded; }
   public get drsDisclaimerIsExpanded(): boolean { return this._drsDisclaimerIsExpanded; }
   public get showGrowHydra(): boolean { return this._showGrowHydra; }
-
   public get isLargeScreen(): boolean { return this.screenService.isFullSize; }
+  public get instanceInfo(): InstanceInfoDto[] { return this.instanceService.instanceInfo; }
+  public get servers(): FederatedServer[] { return this._servers;}
 
 
   ngOnInit(): void {
     this._isMobile = this.screenService.isSmallSize;
     this.screenService.appScreenSize$.subscribe(()=>{
       this._isMobile = this.screenService.isSmallSize;
-    })
+    });
+    this._buildServers();
   }
 
-  public userCount(count: number): string { 
-    if(count < 100){
-      return 'less than 100';
-    }else if(count >= 100 && count < 1000){
-      return 'less than 1,000';
-    }else if(count >= 1000 && count < 10000){
-      return 'less than 10,000';
-    }else if(count >= 10000 && count < 100000){
-      return 'less than 100,000';
-    }else{
-      return '';
-    }
+  private _buildServers(){
+    this._servers = this.serverList.map(item => new FederatedServer(item));
+    
   }
 
-  public registrationStatus(server: FederatedServer): string{ 
-    if(server.registrationStatus === 'OPEN'){
-      return 'Open';
-    }else if(server.registrationStatus === 'BY_INVITE'){
-      return server.registrationLink;
-    }else if(server.registrationStatus === 'CLOSED'){
-      return 'Closed';
-    }
-    return '';
+  public registrationStatus(server: FederatedServerInfo): string{ 
+    return ' ** Registration Status **'
   }
 
   public onClickOwner(server: FederatedServer){
-    server.ownerIsExpanded = !server.ownerIsExpanded;
+    server.onClickOwner();
   }
 
   public onClickAddServer(){
@@ -81,5 +70,6 @@ export class FederatedServerListComponent implements OnInit {
   onClickLink(url: string){
     window.open(url, '_blank');
   }
+
 
 }

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FederatedServer } from '../federated-server.interface';
+import { FederatedServerInfo } from '../federated-server-info.interface';
 
 @Component({
   selector: 'app-owner-info',
@@ -10,30 +10,21 @@ export class OwnerInfoComponent implements OnInit {
 
   constructor() { }
   
-  private _info: FederatedServer = {
+  private _info: FederatedServerInfo = {
     name: '',
-    statusPositive: false,
     displayUrl: '',
     fullUrl: '',
-    userCount: 0,
-    serverStatus: '',
-    drsStatus: '',
     adminEmail: '',
     adminCreds: [],
     drsEvidenceLink: '',
-    registrationStatus: 'CLOSED',
-    registrationLink: '',
-    implementation: '',
+    implementation: 'Other',
     serverLocation: '',
     thumbnailFile: '',
     serverDescription: '',
-    exploreLink: '',
-    aboutLink: '',
-    ownerIsExpanded: true,
   }
 
-  @Input() public set info(info: FederatedServer){ this._info = info;}
-  public get info(): FederatedServer { return this._info; }
+  @Input() public set info(info: FederatedServerInfo){ this._info = info;}
+  public get info(): FederatedServerInfo { return this._info; }
 
   ngOnInit(): void {
   }
