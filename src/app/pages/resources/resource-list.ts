@@ -19,12 +19,12 @@ export const resourceList: ResourceItem[] = [
         displayUrl: 'www.drsgme.org',
         description: 'Information website produced by GameStop investors to provide information about the fundamentally important Direct Registration System',
     },
-    {
-        title: 'GameStop Direct-Registered Share Calculator',
-        fullUrl: 'https://www.computershared.net',
-        displayUrl: 'www.computershared.net',
-        description: 'Information website produced by GameStop investors that uses a methodology to estimate the current number of shares of GME that have been directly registered',
-    },
+    // {
+    //     title: 'GameStop Direct-Registered Share Calculator',
+    //     fullUrl: 'https://www.computershared.net',
+    //     displayUrl: 'www.computershared.net',
+    //     description: 'Information website produced by GameStop investors that uses a methodology to estimate the current number of shares of GME that have been directly registered',
+    // },
     {
         title: 'GameStop Due Diligence - GMEdd.com',
         fullUrl: 'https://www.gmedd.com',
