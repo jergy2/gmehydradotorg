@@ -99,6 +99,7 @@ export class ConfirmApplicationComponent implements OnInit, OnDestroy {
   }
   public onClickSubmit() {
     const postUrl = 'https://hydramailer.org/submit-server';
+    // const postUrl = 'http://localhost:3000/submit-server';
     const headers = new HttpHeaders()
     // .set('Access-Control-Allow-Origin', '*');
       // .set('content-type', 'application/json')
