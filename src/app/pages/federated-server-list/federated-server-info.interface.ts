@@ -11,4 +11,6 @@ export interface FederatedServerInfo{
     serverLocation: string;
     thumbnailFile: string;
     serverDescription: string;
+    monthlyActiveUsers: number;
+    registration: 'Closed' | 'Approval Required' | 'Open';
 }

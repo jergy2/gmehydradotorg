@@ -33,6 +33,8 @@ export class FederatedServer {
         this._serverLocation = serverInfo.serverLocation;
         this._thumbnailFile = serverInfo.thumbnailFile;
         this._serverDescription = serverInfo.serverDescription;
+        this._monthlyActiveUsers = serverInfo.monthlyActiveUsers;
+        this._registration = serverInfo.registration;
     }
 
     public addInstanceInfo(instanceInfo: InstanceInfoDto){

@@ -22,18 +22,18 @@ export const sidebarItems: SidebarItem[] = [
     //     title: 'Systemic Problems',
     //     path: '/systemic-problems'
     // },
-    {
-        title: 'Direct Registration System (DRS)',
-        path: '/direct-registration-system'
-    },
+    // {
+    //     title: 'Direct Registration System (DRS)',
+    //     path: '/direct-registration-system'
+    // },
     // {
     //     title: 'Timeline',
     //     path: '/timeline'
     // },
-    {
-        title: 'Resources',
-        path: '/resources'
-    },
+    // {
+    //     title: 'Resources',
+    //     path: '/resources'
+    // },
     {
         title: 'About',
         path: '/about'

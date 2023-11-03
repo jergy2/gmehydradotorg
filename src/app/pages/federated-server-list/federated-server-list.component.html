@@ -44,13 +44,7 @@
                         [ngStyle]="{ 'text-align': isLargeScreen ? 'right': 'left' }">
                         <div style="font-size:1.0em; display:flex;flex-direction: row; align-items: center;">
                             Monthly active users: 
-                            <div *ngIf="!server.dataRetrieved" style="margin-left: 3px; height: 18px; display:flex;flex-direction: row;align-items: center;">
-                                <div class="lds-ripple">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <span *ngIf="server.dataRetrieved" style="margin-left: 5px; font-weight: bold;">{{ server.monthlyActiveUsers }}</span>
+                            <span style="margin-left: 5px; font-weight: bold;">< {{server.monthlyActiveUsers}}</span>
                         </div>
                         <div style="font-size:0.9em;display:flex;flex-direction: row; align-items: center;">
                             Software version:
@@ -62,13 +56,7 @@
                         </div>
                         <div style="font-size:0.9em; display:flex;flex-direction: row; align-items: center;">
                             Registration: 
-                            <div *ngIf="!server.dataRetrieved" style="margin-left: 3px; height: 18px; display:flex;flex-direction: row;align-items: center;">
-                                <div class="lds-ripple">
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                            <span *ngIf="server.dataRetrieved" style="margin-left: 5px;">{{ server.registration }}</span>
+                            <span style="margin-left: 5px;">{{server.registration}}</span>
                         </div>
                     </div>
 
@@ -96,14 +84,12 @@
             <div class="disclaimer-title no-select" (click)="onClickEmailDisclaimer()">
                 <fa-icon [icon]="faExclamationTriangle" style="color:gray;margin-right: 10px;"></fa-icon>
                 <div>
-                    Email address required
+                    Email address possibly required
                 </div>
             </div>
             <div *ngIf="emailDisclaimerIsExpanded">
                 <p>
-                    An email address is required to sign up for an account on Mastodon instances and most other
-                    fediverse
-                    instances.
+                    An email address is required to sign up for an on most fediverse instances.
                 </p>
                 <p>
                     If you do not want to use your primary email address in order to get an account in the fediverse,

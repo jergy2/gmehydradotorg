@@ -8,12 +8,10 @@ import { SidebarComponent } from './nav/sidebar/sidebar.component';
 import { ResourcesComponent } from './pages/resources/resources.component';
 import { FederatedServerListComponent } from './pages/federated-server-list/federated-server-list.component';
 import { DrsComponent } from './pages/drs/drs.component';
-import { TimelineComponent } from './pages/timeline/timeline.component';
 import { FediverseComponent } from './pages/fediverse/fediverse.component';
 import { FooterComponent } from './nav/footer/footer.component';
 import { RunYourOwnComponent } from './pages/run-your-own/run-your-own.component';
 import { DrsLyricsComponent } from './pages/drs/drs-lyrics/drs-lyrics.component';
-import { SystemicProblemsComponent } from './pages/systemic-problems/systemic-problems.component';
 import { HeaderMenuComponent } from './nav/header-menu/header-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
@@ -33,12 +31,10 @@ import { DedicatedProvidersComponent } from './pages/run-your-own/dedicated-prov
     SidebarComponent,
     ResourcesComponent,
     DrsComponent,
-    TimelineComponent,
     FediverseComponent,
     FooterComponent,
     RunYourOwnComponent,
     DrsLyricsComponent,
-    SystemicProblemsComponent,
     HeaderMenuComponent,
     WelcomeComponent,
     GrowHydraComponent,

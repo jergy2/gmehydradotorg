@@ -21,6 +21,8 @@ export class OwnerInfoComponent implements OnInit {
     serverLocation: '',
     thumbnailFile: '',
     serverDescription: '',
+    monthlyActiveUsers: 0,
+    registration: 'Closed',
   }
 
   @Input() public set info(info: FederatedServerInfo){ this._info = info;}
